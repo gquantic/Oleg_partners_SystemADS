@@ -53,6 +53,9 @@ Route::get('/profile', function () {
     return view('profile');
 })->name('profile')->middleware('auth');
 
+Route::put('{id}/change-password','HomeController@changePassword')->name('password');
+
+
 
 /*
 |--------------------------------------------------------------------------

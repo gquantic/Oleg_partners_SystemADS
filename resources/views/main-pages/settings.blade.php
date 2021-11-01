@@ -93,32 +93,72 @@
                                 <div class="col-12">
                                     <div class="col-lg-12">
                                         <div class="card">
+
+                                            @if( session()->has('message') )
+                                                <div class="alert alert-success alert-dismissible">
+                                                    {{ session()->get('message') }}
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                </div>
+                                            @endif
+
+
+                                            @if( session()->has('error') )
+                                                <div class="alert alert-danger alert-dismissible">
+                                                    {{ session()->get('error') }}
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                                </div>
+                                                @endif
+
+
+                                                @if( $errors->any() )
+                                                    <div class="alert alert-danger">
+                                                        <ul class="edit-profile">
+                                                            @foreach($errors->all() as $error)
+                                                                <li>{{$error}}</li>
+                                                            @endforeach
+                                                        </ul>
+                                                    </div>
+                                                @endif
+
+
                                             <div class="card-header text-center">
                                                 <strong>Смена пароля</strong>
                                             </div>
-                                            <div class="card-body">
+                                            <form class="card-body form-group" method="POST" action="{{ route('password', Auth::user() ) }}">
+                                                @csrf
+                                                @method("PUT")
                                                 <div class="row mb-3">
                                                     <div class="col-sm-3">
-                                                        <h6 class="mb-0">Пароль</h6>
+                                                        <label for="old-password"><h6 class="mb-0">Старый пароль</h6></label>
                                                     </div>
                                                     <div class="col-sm-9 text-secondary">
-                                                        <input type="text" class="form-control" value="" />
+                                                        <input type="password" name="old-password" class="form-control" id="old-password" />
                                                     </div>
                                                 </div>
-                                                <div class="row mb-3">
+
+
+
+                                                <div class="row mb-3 form-group">
                                                     <div class="col-sm-3">
-                                                        <h6 class="mb-0">Повтор пароля</h6>
+                                                        <h6 class="mb-0">Новый пароль</h6>
                                                     </div>
                                                     <div class="col-sm-9 text-secondary">
-                                                        <input type="text" class="form-control" value="" />
+                                                        <input type="password" name="password" class="form-control" id="password" />
                                                     </div>
                                                 </div>
+
+
+
                                                 <div class="row mb-3">
                                                     <div class="col-sm-3">
-                                                        <h6 class="mb-0">Текущий пароль</h6>
+                                                        <h6 class="mb-0">Подтвердите пароль</h6>
                                                     </div>
                                                     <div class="col-sm-9 text-secondary">
-                                                        <input type="text" class="form-control" value="" />
+                                                        <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" />
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
@@ -126,7 +166,7 @@
                                                         Сохранить
                                                     </button>
                                                 </div>
-                                            </div>
+                                            </form>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
