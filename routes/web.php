@@ -49,6 +49,11 @@ Route::get('/knowledge', function () {
     return view('main-pages.dashboard');
 })->name('knowledge')->middleware('auth');
 
+Route::get('/profile', function () {
+    return view('profile');
+})->name('profile')->middleware('auth');
+
+
 /*
 |--------------------------------------------------------------------------
 | Работа с балансом
