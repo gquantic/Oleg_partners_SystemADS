@@ -34,7 +34,7 @@ Route::get('/home', function () {
 })->name('home')->middleware('auth');
 
 Route::get('/settings', function () {
-    return view('main-pages.dashboard');
+    return view('main-pages.settings');
 })->name('settings')->middleware('auth');
 
 Route::get('/support', function () {

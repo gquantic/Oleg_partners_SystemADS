@@ -292,7 +292,7 @@
                         </div>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="{{ url('/profile') }}"><i class="bx bx-cog"></i><span>Настройки</span></a>
+                        <li><a class="dropdown-item" href="{{ url('/settings') }}"><i class="bx bx-cog"></i><span>Настройки</span></a>
                         </li>
 {{--                        <li><a class="dropdown-item" href="javascript:;"><i--}}
 {{--                                    class='bx bx-download'></i><span>Downloads</span></a>--}}
