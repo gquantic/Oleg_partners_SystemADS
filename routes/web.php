@@ -55,8 +55,6 @@ Route::get('/profile', function () {
 
 Route::put('{id}/change-password','HomeController@changePassword')->name('password');
 
-
-
 /*
 |--------------------------------------------------------------------------
 | Работа с балансом
