@@ -109,7 +109,7 @@
                 <ul>
                     <li><a href="{{ route('partner-referrals') }}"><i class="bx bx-right-arrow-alt"></i>Данные по партнерам</a>
                     </li>
-                    <li><a href="{{ route('offers-catalog') }}"><i class="bx bx-right-arrow-alt"></i>Привлечение Рекламодателей</a>
+                    <li><a href="{{ route('partner-invite') }}"><i class="bx bx-right-arrow-alt"></i>Привлечение Рекламодателей</a>
                     </li>
                     <li><a href="{{ route('offers-catalog') }}"><i class="bx bx-right-arrow-alt"></i>Привлечение Веб-мастеров</a>
                     </li>
