@@ -103,7 +103,10 @@ Route::get('/offers/links', function () {
     return view('offers.links');
 })->name('offers-links')->middleware('auth');
 
-Route::get('/offers/catalog', [App\Http\Controllers\HomeController::class, 'index'])->name('offers-catalog')->middleware('auth');
+Route::get('/offers/catalog', function () {
+    return view('offers.catalog');
+})->name('offers-catalog')->middleware('auth');
+
 Route::get('/offers/view/{id}', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth');
 
 /*
@@ -112,6 +115,6 @@ Route::get('/offers/view/{id}', [App\Http\Controllers\HomeController::class, 'in
 |--------------------------------------------------------------------------
 */
 
-Route::get('/partner/referrals', [App\Http\Controllers\HomeController::class, 'index'])->name('offers-links')->middleware('auth');
-Route::get('/offers/advertisers', [App\Http\Controllers\HomeController::class, 'index'])->name('offers-catalog')->middleware('auth');
-Route::get('/offers/webmasters', [App\Http\Controllers\HomeController::class, 'index'])->name('offers-catalog')->middleware('auth');
+Route::get('/partner/referrals', [App\Http\Controllers\HomeController::class, 'index'])->name('partners')->middleware('auth');
+Route::get('/offers/advertisers', [App\Http\Controllers\HomeController::class, 'index'])->name('partner')->middleware('auth');
+Route::get('/offers/webmasters', [App\Http\Controllers\HomeController::class, 'index'])->name('partner')->middleware('auth');

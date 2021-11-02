@@ -107,7 +107,7 @@
                     <div class="menu-title">Партнерская <br> система</div>
                 </a>
                 <ul>
-                    <li><a href="{{ route('offers-links') }}"><i class="bx bx-right-arrow-alt"></i>Данные по партнерам</a>
+                    <li><a href="{{ route('partners') }}"><i class="bx bx-right-arrow-alt"></i>Данные по партнерам</a>
                     </li>
                     <li><a href="{{ route('offers-catalog') }}"><i class="bx bx-right-arrow-alt"></i>Привлечение Рекламодателей</a>
                     </li>
