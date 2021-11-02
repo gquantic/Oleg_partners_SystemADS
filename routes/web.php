@@ -115,6 +115,9 @@ Route::get('/offers/view/{id}', [App\Http\Controllers\HomeController::class, 'in
 |--------------------------------------------------------------------------
 */
 
-Route::get('/partner/referrals', [App\Http\Controllers\HomeController::class, 'index'])->name('partners')->middleware('auth');
+Route::get('/partner/referrals', function () {
+    return view('partner.referrals');
+})->name('partner-referrals')->middleware('auth');
+
 Route::get('/offers/advertisers', [App\Http\Controllers\HomeController::class, 'index'])->name('partner')->middleware('auth');
 Route::get('/offers/webmasters', [App\Http\Controllers\HomeController::class, 'index'])->name('partner')->middleware('auth');
