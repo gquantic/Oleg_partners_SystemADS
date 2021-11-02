@@ -122,3 +122,7 @@ Route::get('/partner/referrals', function () {
 Route::get('/partner/invite', function () {
     return view('partner.invite');
 })->name('partner-invite')->middleware('auth');
+
+Route::get('/partner/invite1', function () {
+    return view('partner.invite1');
+})->name('partner-invite1')->middleware('auth');
