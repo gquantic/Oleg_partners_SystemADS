@@ -46,7 +46,7 @@ Route::get('/faq', function () {
 })->name('faq')->middleware('auth');
 
 Route::get('/knowledge', function () {
-    return view('main-pages.dashboard');
+    return view('main-pages.knowledge');
 })->name('knowledge')->middleware('auth');
 
 Route::get('/profile', function () {
