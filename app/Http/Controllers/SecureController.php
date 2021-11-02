@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Auth\Authenticatable;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class SecureController extends Controller
 {
@@ -14,6 +17,7 @@ class SecureController extends Controller
     {
 
     }
+
     public function changePassword(Request $request, $id)
     {
         $user = User::find($id);
@@ -35,5 +39,26 @@ class SecureController extends Controller
         return redirect()
             ->route('settings')
             ->with('message','Успешно обновлено!');
+    }
+
+    protected function getDeviceData()
+    {
+        return $data = [
+            'browser' => $_SERVER['HTTP_USER_AGENT'],
+            'ip' => $_SERVER['REMOTE_ADDR']
+        ];
+    }
+
+    public function setAuth()
+    {
+        $data = $this->getDeviceData();
+
+        DB::table('authorizationslist')->insert(
+            [
+                'user' => Auth::user()->id,
+                'device' => $data['browser'],
+                'ip' => $data['ip'],
+            ]
+        );
     }
 }

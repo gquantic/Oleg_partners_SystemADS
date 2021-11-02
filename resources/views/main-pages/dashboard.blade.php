@@ -3,7 +3,6 @@
 @section('content')
     <div class="page-wrapper">
         <div class="page-content">
-
             <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4">
                 <div class="col">
                     <div class="card radius-10 bg-gradient-deepblue">
@@ -95,14 +94,17 @@
                             </div>
                         </div>
                         <ul class="list-group list-group-flush">
+                            @foreach($authorizationList as $authorize)
                             <li class="list-group-item bg-transparent">
                                 <div class="d-flex align-items-center">
                                     <div class="ms-0">
-                                        <h6 class="mb-0">iPhone X <small class="ms-4">08.34 AM</small></h6>
-                                        <p class="mb-0 small-font">Sara Jhon : This is svery Nice phone in low budget.</p>
+                                        <h6 class="mb-0">{{ substr($authorize->device, 0, 36) }} <small class="ms-4">{{ str_replace('-', '.', $authorize->created_at); }}</small></h6>
+                                        <p class="mb-0 font-13 text-secondary">{{ $authorize->ip }}</p>
                                     </div>
+                                    <hr>
                                 </div>
                             </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
