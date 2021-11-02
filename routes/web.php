@@ -42,7 +42,7 @@ Route::get('/support', function () {
 })->name('support')->middleware('auth');
 
 Route::get('/faq', function () {
-    return view('main-pages.dashboard');
+    return view('main-pages.faq');
 })->name('faq')->middleware('auth');
 
 Route::get('/knowledge', function () {
