@@ -88,7 +88,9 @@ Route::get('/offer/my', function () {
     return view('offer/my-offers');
 })->name('offer-my')->middleware('auth');
 
-Route::get('/offer/api', [App\Http\Controllers\HomeController::class, 'index'])->name('offer-api')->middleware('auth');
+Route::get('/offer/api', function () {
+    return view('offer.api');
+})->name('offer-api')->middleware('auth');
 Route::get('/offer/my/{id}', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth');
 
 /*
