@@ -43,7 +43,7 @@
                                                             <div class="card-header">Текущая версия api</div>
                                                             <div class="card-body">
                                                                 URL- https://systemads.ru/api/version<br>
-                                                                Формат ответа - <span class="badge badge-secondary">JSON</span><br>
+                                                                Формат ответа - <span class="badge badge-secondary" style="background: #6f42c1;">JSON</span><br>
                                                                 Пример ответа - {"version": "0.0.1"}
                                                             </div>
                                                         </div>
@@ -52,9 +52,9 @@
                                                             <div class="card-body">
                                                                 <p>Отправляется к примеру при посещении посетителя анкеты заполнение которой оплачивается, но до заполнения анкеты.</p>
                                                                 URL- https://systemads.ru/api/request/unconfirm?uuid=uuid<br>
-                                                                Формат ответа - <span class="badge badge-secondary">JSON</span><br>
-                                                                Метод запроса - <span class="badge badge-primary">PUT</span><br>
-                                                                Данные запроса uuid - <span class="badge badge-warning">UUID посетителя с платформы</span><br>
+                                                                Формат ответа - <span class="badge badge-secondary" style="background: #6f42c1;">JSON</span><br>
+                                                                Метод запроса - <span class="badge badge-primary" style="background: #0b5ed7;">PUT</span><br>
+                                                                Данные запроса uuid - <span class="badge badge-warning" style="background: orangered;">UUID посетителя с платформы</span><br>
                                                                 Пример успешного ответа - {"status": "success"}<br>
 
                                                             </div>
@@ -64,10 +64,10 @@
                                                             <div class="card-body">
                                                                 <p>После исполнения запрошенного действия необходимо совершить данный запрос для подтверждения и оплаты. Необходимо указать сумму продажи для подсчета системой вознаграждения GET параметром amount .</p>
                                                                 URL- https://systemads.ru/api/sale/confirm?uuid=`uuid`&amp;amount=`product_price`<br>
-                                                                Формат ответа - <span class="badge badge-secondary">JSON</span><br>
-                                                                Метод запроса - <span class="badge badge-primary">PUT</span><br>
-                                                                Данные запроса uuid - <span class="badge badge-warning">UUID посетителя с платформы</span><br>
-                                                                Данные запроса amount - <span class="badge badge-warning">Полная сумма продажи</span><br>
+                                                                Формат ответа - <span class="badge badge-secondary" style="background: #6f42c1;">JSON</span><br>
+                                                                Метод запроса - <span class="badge badge-primary" style="background: #0b5ed7;">PUT</span><br>
+                                                                Данные запроса uuid - <span class="badge badge-warning" style="background: orangered;">UUID посетителя с платформы</span><br>
+                                                                Данные запроса amount - <span class="badge badge-warning" style="background: orangered;">Полная сумма продажи</span><br>
                                                                 Пример успешного ответа - {"status": "success"}<br>
                                                             </div>
                                                         </div>
@@ -76,9 +76,9 @@
                                                             <div class="card-body">
                                                                 <p>После исполнения запрошенного действия необходимо совершить данный запрос для подтверждения и оплаты. </p>
                                                                 URL- https://systemads.ru/api/cpa/confirm?uuid=`uuid`<br>
-                                                                Формат ответа - <span class="badge badge-secondary">JSON</span><br>
-                                                                Метод запроса - <span class="badge badge-primary">PUT</span><br>
-                                                                Данные запроса uuid - <span class="badge badge-warning">UUID посетителя с платформы</span><br>
+                                                                Формат ответа - <span class="badge badge-secondary" style="background: #6f42c1;">JSON</span><br>
+                                                                Метод запроса - <span class="badge badge-primary" style="background: #0b5ed7;">PUT</span><br>
+                                                                Данные запроса uuid - <span class="badge badge-warning" style="background: orangered;">UUID посетителя с платформы</span><br>
 
                                                                 Пример успешного ответа - {"status": "success"}<br>
                                                             </div>
@@ -96,7 +96,8 @@
                                                         </div>
                                                         <p>
                                                             Для подключения разместите код <br>
-                                                        </p><xmp><script src="https://systemads.ru/static/integration/mt.js"></script></xmp>
+                                                        </p>
+                                                        <xmp><script src="https://systemads.ru/static/integration/mt.js"></script></xmp>
                                                         в нижней части шаблона вашего сайта.
                                                         <p></p>
                                                     </div>

@@ -99,7 +99,10 @@ Route::get('/offer/my/{id}', [App\Http\Controllers\HomeController::class, 'index
 |--------------------------------------------------------------------------
 */
 
-Route::get('/offers/links', [App\Http\Controllers\HomeController::class, 'index'])->name('offers-links')->middleware('auth');
+Route::get('/offers/links', function () {
+    return view('offers.links');
+})->name('offers-links')->middleware('auth');
+
 Route::get('/offers/catalog', [App\Http\Controllers\HomeController::class, 'index'])->name('offers-catalog')->middleware('auth');
 Route::get('/offers/view/{id}', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth');
 
