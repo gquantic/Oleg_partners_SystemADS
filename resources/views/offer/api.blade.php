@@ -17,13 +17,13 @@
                                     <div class="col-xs-12 col-md-12">
                                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                                             <li class="nav-item">
-                                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#api" role="tab" aria-controls="home" aria-selected="true">API</a>
+                                                <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#api" role="tab" aria-controls="home" aria-selected="true">API</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#metrika" role="tab" aria-controls="profile" aria-selected="false">Модуль Метрики</a>
+                                                <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#metrika" role="tab" aria-controls="profile" aria-selected="false">Модуль Метрики</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#additional" role="tab" aria-controls="contact" aria-selected="false">Дополнительная интеграция</a>
+                                                <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#additional" role="tab" aria-controls="contact" aria-selected="false">Дополнительная интеграция</a>
                                             </li>
                                         </ul>
                                         <div class="tab-content" id="myTabContent">
