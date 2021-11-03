@@ -23,7 +23,7 @@ class SecureController extends Controller
         $user = User::find($id);
 
         $request->validate([
-            'old-password' => 'required',
+            'old_password' => 'required',
             'password' => 'required|confirmed'
         ]);
 
@@ -40,6 +40,24 @@ class SecureController extends Controller
             ->route('settings')
             ->with('message','Успешно обновлено!');
     }
+
+
+
+//    public function changeEmail(Request $request, $id)
+//    {
+//        $user = User::find($id);
+//
+//        $request->validate([
+//            'old-email' => 'required',
+//            'email' => 'required|confirmed'
+//        ]);
+//
+//        if (User::check($request->old_email, $user->email))
+//        {
+//            return back()->with('error','Email не найден в базе');
+//        }
+//
+//    }
 
     protected function getDeviceData()
     {

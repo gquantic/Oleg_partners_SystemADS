@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -57,6 +58,7 @@ Route::get('/profile', function () {
 })->name('profile')->middleware('auth');
 
 Route::put('{id}/change-password','App\Http\Controllers\SecureController@changePassword')->name('password');
+//Route::put('{id}/change-email','App\Http\Controllers\SecureController@changeEmail')->name('email');
 
 /*
 |--------------------------------------------------------------------------

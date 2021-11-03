@@ -77,7 +77,7 @@
                                     <hr class="my-4" />
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                            <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe me-2 icon-inline"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>Email</h6>
+                                            <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail me-2 icon-inline text-primary"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>Email</h6>
                                             <span class="text-secondary">{{ Auth::user()->email }}</span>
                                         </li>
                                         <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
@@ -133,10 +133,10 @@
                                                 @method("PUT")
                                                 <div class="row mb-3">
                                                     <div class="col-sm-3">
-                                                        <label for="old-password"><h6 class="mb-0">Старый пароль</h6></label>
+                                                        <label for="old_password"><h6 class="mb-0">Старый пароль</h6></label>
                                                     </div>
                                                     <div class="col-sm-9 text-secondary">
-                                                        <input type="password" name="old-password" class="form-control" id="old-password" />
+                                                        <input type="password" name="old_password" class="form-control" id="old_password" />
                                                     </div>
                                                 </div>
 
