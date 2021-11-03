@@ -17,7 +17,9 @@ class AuthorizationsList extends Migration
             $table->id();
             $table->integer('user');
             $table->string('device');
-            $table->timestamps();
+            $table->string('ip');
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

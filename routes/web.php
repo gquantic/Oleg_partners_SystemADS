@@ -30,7 +30,10 @@ Auth::routes([
 */
 
 Route::get('/home', function () {
-    return view('main-pages.dashboard');
+    // Вытаскиваем список авторизаций
+    $authorizationsList = DB::table('authorizationslist')->where('user', Auth::user()->id)->get();
+
+    return view('main-pages.dashboard', ['authorizationList' => $authorizationsList]);
 })->name('home')->middleware('auth');
 
 Route::get('/settings', function () {
