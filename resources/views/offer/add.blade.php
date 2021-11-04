@@ -57,7 +57,7 @@
                                                     <div class="col-lg-7 m-auto ">
                                                         <div class="form-group">
                                                             <label for="name">Название оффера</label>
-                                                            <input class="form-control" id="name" name="name" required="" type="text" value="">
+                                                            <input class="form-control" name="name" required="" type="text" value="">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Укажите основной url проекта вашего оффера</label>
@@ -67,7 +67,7 @@
                                                             <label>
                                                                 <label for="project_type">Тип проекта</label>
                                                             </label>
-                                                            <select class="form-control" id="project_type" name="project_type">
+                                                            <select class="form-control" name="project_type">
                                                                 <option value="1">Аксессуары и Гаджеты</option>
                                                                 <option value="2">Инвестиционные проекты – компании</option>
                                                                 <option value="3">Акции и акционерные компании</option>
@@ -94,7 +94,7 @@
                                                         <div class="form-group">
                                                             <label>Детальное описание оффера</label><br>
                                                             <small>Детальное описание действия по офферу</small>
-                                                            <textarea class="form-control" id="details" name="details" required=""></textarea>
+                                                            <textarea class="form-control" name="details" required=""></textarea>
                                                         </div>
                                                         <center>
                                                             <button class="btn btn-default prev-step mt-3" type="button">Назад</button>
@@ -108,7 +108,7 @@
                                                     <div class="col-lg-7 m-auto ">
                                                         <div class="form-group">
                                                             <label>Тип действий</label>
-                                                            <select class="form-control" id="action_id" name="action_id">
+                                                            <select class="form-control" name="action_id">
                                                                 <option value="1">Sale</option>
                                                                 <option value="2">Revshare</option>
                                                                 <option value="3">CPA</option>
@@ -118,7 +118,7 @@
                                                             <label>Вознаграждение за ед. выполнение</label>
                                                             <div class="input-group">
                                                                 <div class="input-group-prepend">
-                                                                    <span class="input-group-text" id="inputGroupPrepend">$</span>
+                                                                    <span class="input-group-text">$</span>
                                                                 </div>
                                                                 <input type="text" name="price" class="form-control">
                                                             </div>
@@ -127,11 +127,11 @@
                                                             <div class="col-xs-12 col-md-12 actions" style="display:none;">
                                                                 <div class="form-group">
                                                                     <label>Описание действия</label>
-                                                                    <textarea class="form-control" id="action_details" name="action_details"></textarea>
+                                                                    <textarea class="form-control" name="action_details"></textarea>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Валюта товара</label>
-                                                                    <select class="form-control" id="currency_item" name="currency_item">
+                                                                    <select class="form-control" name="currency_item">
                                                                         <option value="USD">USD</option>
                                                                         <option value="GBR">GBR</option>
                                                                         <option value="EUR">EUR</option>
@@ -142,7 +142,7 @@
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Если требуется взнос, покупка, вклад или иное финансовое действие от клиентов, укажите сумму. Сумма чека должна быть фиксированная. Если подразумевается несколько видов товаров или услуг с разными суммами чека, то выберите иной тип действия, RevShare или Sale.</label>
-                                                                    <input class="form-control" id="action_amount" name="action_amount" type="text" value="0.00">
+                                                                    <input class="form-control" name="action_amount" type="text" value="0.00">
                                                                 </div>
                                                             </div>
                                                             <div class="col-xs-12 col-md-12 sellings">
@@ -150,14 +150,14 @@
                                                                     <label>Укажите процент с продажи</label>
                                                                     <div class="input-group">
                                                                         <div class="input-group-prepend">
-                                                                            <span class="input-group-text" id="inputGroupPrepend">%</span>
+                                                                            <span class="input-group-text">%</span>
                                                                         </div>
-                                                                        <input class="form-control" id="percent_rate" name="percent_rate" type="text" value="0.00">
+                                                                        <input class="form-control" name="percent_rate" type="text" value="0.00">
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Валюта продажи товара</label>
-                                                                    <select class="form-control" id="product_currency" name="product_currency">
+                                                                    <select class="form-control" name="product_currency">
                                                                         <option value="USD">USD</option>
                                                                         <option value="GBR">GBR</option>
                                                                         <option value="EUR">EUR</option>
@@ -170,13 +170,13 @@
                                                                     <div class="col-xs-12 col-md-6 ">
                                                                         <div class="form-group">
                                                                             <label>Мин. стоимость продукта</label>
-                                                                            <input class="form-control" id="min_price" name="min_price" type="text" value="0.00">
+                                                                            <input class="form-control" name="min_price" type="text" value="0.00">
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-xs-12 col-md-6 ">
                                                                         <div class="form-group">
                                                                             <label>Макс. стоимость продукта</label>
-                                                                            <input class="form-control" id="max_price" name="max_price" type="text" value="0.00">
+                                                                            <input class="form-control" name="max_price" type="text" value="0.00">
                                                                         </div>
                                                                     </div>
                                                                 </div>
