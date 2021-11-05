@@ -18,68 +18,140 @@
                     <form method="post" action="{{ route('create-offer') }}" id="msform">
                         @csrf
                         <ul id="progressbar">
-                            <li class="active" id="account"><strong>Account</strong></li>
-                            <li id="personal"><strong>Personal</strong></li>
-                            <li id="payment"><strong>Payment</strong></li>
-                            <li id="confirm"><strong>Finish</strong></li>
+                            <li class="active" id="account"><strong>Правила создания оффера</strong></li>
+                            <li id="personal"><strong>Изображение оффера</strong></li>
+                            <li id="payment"><strong>Описание оффера</strong></li>
+                            <li id="confirm"><strong>Тип действий</strong></li>
                         </ul> <!-- fieldsets -->
                         <fieldset>
                             <div class="form-card">
-                                <h2 class="fs-title">Account Information</h2> <input type="email" name="email" placeholder="Email Id" /> <input type="text" name="uname" placeholder="UserName" /> <input type="password" name="pwd" placeholder="Password" /> <input type="password" name="cpwd" placeholder="Confirm Password" />
-                            </div> <input type="button" name="next" class="next action-button" value="Next Step" />
+                                <h2 class="fs-title">Правила создания оффера</h2>
+                                <p>1. Если вы желаете продвигать или продавать несколько товаров одной категории, то можно создать единый оффер. Пример: Косметика для женщин (духи, туш для ресниц, пудра)</p>
+                                <p>2. Если вы желаете продвигать или продавать несколько товаров разной категории, для более успешного продвижения вам потребуется создать несколько офферов. Пример: Он-лайн магазин, все для мужчин и Женщин (мужские духи, женские духи) Так как в данном случае Веб мастерам потребуется вести к вам две категории мотивированных клиентов.</p>
+                            </div>
+                            <input type="button" name="next" class="next action-button" value="Next Step" />
                         </fieldset>
                         <fieldset>
                             <div class="form-card">
-                                <h2 class="fs-title">Personal Information</h2> <input type="text" name="fname" placeholder="First Name" /> <input type="text" name="lname" placeholder="Last Name" /> <input type="text" name="phno" placeholder="Contact No." /> <input type="text" name="phno_2" placeholder="Alternate Contact No." />
-                            </div> <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> <input type="button" name="next" class="next action-button" value="Next Step" />
+                                <h2 class="fs-title">Изображение оффера</h2>
+                                <input type="file" name="fname" placeholder="First Name" class="dropify" />
+                            </div>
+                            <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                            <input type="button" name="next" class="next action-button" value="Next Step" />
                         </fieldset>
                         <fieldset>
                             <div class="form-card">
-                                <h2 class="fs-title">Payment Information</h2>
-                                <div class="radio-group">
-                                    <div class='radio' data-value="credit"><img src="https://i.imgur.com/XzOzVHZ.jpg" width="200px" height="100px"></div>
-                                    <div class='radio' data-value="paypal"><img src="https://i.imgur.com/jXjwZlj.jpg" width="200px" height="100px"></div> <br>
-                                </div> <label class="pay">Card Holder Name*</label> <input type="text" name="holdername" placeholder="" />
-                                <div class="row">
-                                    <div class="col-9"> <label class="pay">Card Number*</label> <input type="text" name="cardno" placeholder="" /> </div>
-                                    <div class="col-3"> <label class="pay">CVC*</label> <input type="password" name="cvcpwd" placeholder="***" /> </div>
+                                <h2 class="fs-title">Описание оффера</h2>
+                                <div class="form-group">
+                                    <label for="name">Название оффера</label>
+                                    <input class="form-control" name="name" type="text">
                                 </div>
-                                <div class="row">
-                                    <div class="col-3"> <label class="pay">Expiry Date*</label> </div>
-                                    <div class="col-9"> <select class="list-dt" id="month" name="expmonth">
-                                            <option selected>Month</option>
-                                            <option>January</option>
-                                            <option>February</option>
-                                            <option>March</option>
-                                            <option>April</option>
-                                            <option>May</option>
-                                            <option>June</option>
-                                            <option>July</option>
-                                            <option>August</option>
-                                            <option>September</option>
-                                            <option>October</option>
-                                            <option>November</option>
-                                            <option>December</option>
-                                        </select> <select class="list-dt" id="year" name="expyear">
-                                            <option selected>Year</option>
-                                        </select> </div>
+                                <div class="form-group">
+                                    <label>Укажите основной url проекта вашего оффера</label>
+                                    <input class="form-control" name="url" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <label for="project_type">Тип проекта</label>
+                                    <select class="form-control" name="project_type" id="project_type">
+                                        <option value="1">Рестораны с он-лайн заказом</option>
+                                        <option value="2">Аксессуары и Гаджеты</option>
+                                        <option value="3">Инвестиционные проекты – компании</option>
+                                        <option value="4">Акции и акционерные компании</option>
+                                        <option value="5">Форекс и Трейдинг</option>
+                                        <option value="6">Финансовые игры - HYIPs</option>
+                                        <option value="7">МЛМ и Сетевой маркетинг</option>
+                                        <option value="8">Казино и Лотереи – Gambling</option>
+                                        <option value="9">Букмейкеры и Ставки на спорт</option>
+                                        <option value="10">Препараты и фармакология - Nutra</option>
+                                        <option value="11">Обучение, курсы и тренинги</option>
+                                        <option value="12">Онлайн магазины, Продажа товаров - Marketplace </option>
+                                        <option value="13">Кошельки, Платежные шлюзы, Обменники</option>
+                                        <option value="14">Банки и Кредитные организации</option>
+                                        <option value="15">Игры, IT и приложения</option>
+                                        <option value="16">Кэш-Бек сервисы</option>
+                                        <option value="17">Гаджеты</option>
+                                        <option value="18">Dating</option>
+                                        <option value="19">Туризм и Путешествия</option>
+                                        <option value="20">Иное - Другая категория </option>
+                                    </select>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <label>Детальное описание оффера</label>
+                                    <small>(Детальное описание действия по офферу)</small>
+                                    <textarea class="form-control" name="description"></textarea>
                                 </div>
                             </div>
                             <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
-                            <input type="submit" name="make_payment" class="" value="Confirm" />
+                            <input type="button" name="next" class="next action-button" value="Next Step" />
                         </fieldset>
                         <fieldset>
                             <div class="form-card">
-                                <h2 class="fs-title text-center">Success !</h2> <br><br>
-                                <div class="row justify-content-center">
-                                    <div class="col-3"> <img src="https://img.icons8.com/color/96/000000/ok--v2.png" class="fit-image"> </div>
-                                </div> <br><br>
-                                <div class="row justify-content-center">
-                                    <div class="col-7 text-center">
-                                        <h5>You Have Successfully Signed Up</h5>
+                                <div class="row">
+                                    <div class="col-lg-7 m-auto ">
+                                        <div class="form-group mb-2">
+                                            <label>Тип действий</label>
+                                            <select class="form-control" name="type_do">
+                                                <option value="1">Sale</option>
+                                                <option value="2">Revshare</option>
+                                                <option value="3">CPA</option>
+                                            </select>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-12 col-md-12 actions">
+                                                <div class="form-group">
+                                                    <label>Описание действия</label>
+                                                    <textarea class="form-control" name="description_do"></textarea>
+                                                </div>
+                                                <div class="form-group mb-2">
+                                                    <label>Валюта товара</label>
+                                                    <select class="form-control" name="currency">
+                                                        <option value="USD">USD</option>
+                                                        <option value="GBR">GBR</option>
+                                                        <option value="EUR">EUR</option>
+                                                        <option value="RUB">RUB</option>
+                                                        <option value="UAH">UAH</option>
+                                                        <option value="KZT">KZT</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-md-12 sellings">
+                                                <div class="form-group">
+                                                    <label>Укажите процент с продажи</label>
+                                                    <input class="form-control" type="text" name="percentsale" value="0.00">
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-md-6 ">
+                                                        <div class="form-group">
+                                                            <label>Мин. стоимость продукта</label>
+                                                            <input class="form-control" type="text" name="minprice" value="0.00">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-12 col-md-6 ">
+                                                        <div class="form-group">
+                                                            <label>Макс. стоимость продукта</label>
+                                                            <input class="form-control" type="text" name="maxprice" value="0.00">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-md-12">
+                                                <div class="form-group">
+                                                    <label><label for="traffic_url">URL для получения трафика</label></label>
+                                                    <input type="text" name="urltraffic" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Укажите ссылку на ваш телеграмм или почту, для связи модератора.</label>
+                                                    <input type="text" name="urltelegram" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                                <center>
+                                    <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                                    <input type="submit" name="make_payment" class="" value="Confirm" />
+                                </center>
                         </fieldset>
                     </form>
                     <script src="{{ asset('/js/form-wizard.js') }}"></script>
