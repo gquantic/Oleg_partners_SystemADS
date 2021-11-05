@@ -131,3 +131,14 @@ Route::get('/partner/invite', function () {
 Route::get('/partner/invite1', function () {
     return view('partner.invite1');
 })->name('partner-invite1')->middleware('auth');
+
+
+/*
+|--------------------------------------------------------------------------
+| Forms
+|--------------------------------------------------------------------------
+*/
+
+Route::post('action/offer/create', function () {
+    dd($_POST);
+})->name('create-offer');
