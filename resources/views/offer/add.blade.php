@@ -35,7 +35,7 @@
                         <fieldset>
                             <div class="form-card">
                                 <h2 class="fs-title">Изображение оффера</h2>
-                                <input type="file" name="fname" placeholder="First Name" class="dropify" />
+                                <input type="file" name="fname" placeholder="First Name" class="dropify" accept="image/*" />
                             </div>
                             <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
                             <input type="button" name="next" class="next action-button" value="Next Step" />
