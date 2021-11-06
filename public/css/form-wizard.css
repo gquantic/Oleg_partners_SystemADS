@@ -194,7 +194,7 @@ select.list-dt:focus {
 
 #progressbar li.active:before,
 #progressbar li.active:after {
-    background: skyblue
+    background: #0d6efd;
 }
 
 .radio-group {
