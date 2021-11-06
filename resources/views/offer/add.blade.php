@@ -22,7 +22,8 @@
                             <li id="personal"><strong>Изображение оффера</strong></li>
                             <li id="payment"><strong>Описание оффера</strong></li>
                             <li id="confirm"><strong>Тип действий</strong></li>
-                        </ul> <!-- fieldsets -->
+                        </ul>
+                        <!-- fieldsets -->
                         <fieldset>
                             <div class="form-card">
                                 <h2 class="fs-title">Правила создания оффера</h2>
@@ -86,6 +87,7 @@
                         </fieldset>
                         <fieldset>
                             <div class="form-card">
+                                <h2 class="fs-title">Настройки вознаграждения</h2>
                                 <div class="row">
                                     <div class="col-lg-7 m-auto ">
                                         <div class="form-group mb-2">
@@ -117,21 +119,27 @@
                                             <div class="col-xs-12 col-md-12 sellings">
                                                 <div class="form-group">
                                                     <label>Укажите процент с продажи</label>
-                                                    <input class="form-control" type="text" name="percentsale" value="0.00">
+                                                    <input class="form-control" type="text" name="percentsale" placeholder="0.00">
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-xs-12 col-md-6 ">
                                                         <div class="form-group">
                                                             <label>Мин. стоимость продукта</label>
-                                                            <input class="form-control" type="text" name="minprice" value="0.00">
+                                                            <input class="form-control" type="text" name="minprice" placeholder="0.00">
                                                         </div>
                                                     </div>
                                                     <div class="col-xs-12 col-md-6 ">
                                                         <div class="form-group">
                                                             <label>Макс. стоимость продукта</label>
-                                                            <input class="form-control" type="text" name="maxprice" value="0.00">
+                                                            <input class="form-control" type="text" name="maxprice" placeholder="0.00">
                                                         </div>
                                                     </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-md-12">
+                                                <div class="form-group">
+                                                    <label>Максимальное количество продаж в день</label>
+                                                    <input type="text" name="numberofsales">
                                                 </div>
                                             </div>
                                             <div class="col-xs-12 col-md-12">
@@ -148,10 +156,8 @@
                                     </div>
                                 </div>
                             </div>
-                                <center>
-                                    <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
-                                    <input type="submit" name="make_payment" class="" value="Confirm" />
-                                </center>
+                                <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                                <input type="submit" name="make_payment" class="" value="Confirm" />
                         </fieldset>
                     </form>
                     <script src="{{ asset('/js/form-wizard.js') }}"></script>
