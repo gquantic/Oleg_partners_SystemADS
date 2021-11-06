@@ -139,6 +139,4 @@ Route::get('/partner/invite1', function () {
 |--------------------------------------------------------------------------
 */
 
-Route::post('action/offer/create', function () {
-    dd($_POST);
-})->name('create-offer');
+Route::post('action/offer/create', [\App\Http\Controllers\OfferController::class, 'createOffer'])->name('create-offer');

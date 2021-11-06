@@ -15,7 +15,7 @@
                 </div>
                 <div class="col-12">
                     <link rel="stylesheet" href="{{ asset('/css/form-wizard.css') }}">
-                    <form method="post" action="{{ route('create-offer') }}" id="msform">
+                    <form method="post" action="{{ route('create-offer') }}" enctype="multipart/form-data" id="msform">
                         @csrf
                         <ul id="progressbar">
                             <li class="active" id="account"><strong>Правила создания оффера</strong></li>
@@ -35,7 +35,7 @@
                         <fieldset>
                             <div class="form-card">
                                 <h2 class="fs-title">Изображение оффера</h2>
-                                <input type="file" name="fname" placeholder="First Name" class="dropify" accept="image/*" />
+                                <input type="file" name="image" placeholder="First Name" class="dropify" accept="image/*" />
                             </div>
                             <input type="button" name="previous" class="previous action-button-previous" value="Назад" />
                             <input type="button" name="next" class="next action-button" value="Далее" style="background: #0d6efd;" />
