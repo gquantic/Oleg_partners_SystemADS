@@ -128,7 +128,7 @@
                                     <div class="card offercard" style="height:100%;">
                                         <div class="card-body">
                                             <center>
-                                                <img style="max-width:100%;height:120px;object-fit:cover;" class="mb-3" src="{{ asset('/images/1111.jpg') }}">
+                                                <img style="max-width:100%;height:120px;object-fit:cover;" class="mb-3" src="{{ asset('/images/1111.png') }}">
                                             </center>
                                             <h3>First</h3>
                                             <table class="table table-sm">
@@ -180,7 +180,7 @@
                                     <div class="card offercard" style="height:100%;">
                                         <div class="card-body">
                                             <center>
-                                                <img style="max-width:100%;height:120px;object-fit:cover;" class="mb-3" src="{{ asset('/images/1111.jpg') }}">
+                                                <img style="max-width:100%;height:120px;object-fit:cover;" class="mb-3" src="{{ asset('/images/1111.png') }}">
                                             </center>
                                             <h3>Second</h3>
                                             <table class="table table-sm">
@@ -232,7 +232,7 @@
                                     <div class="card offercard" style="height:100%;">
                                         <div class="card-body">
                                             <center>
-                                                <img style="max-width:100%;height:120px;object-fit:cover;" class="mb-3" src="{{ asset('/images/1111.jpg') }}">
+                                                <img style="max-width:100%;height:120px;object-fit:cover;" class="mb-3" src="{{ asset('/images/1111.png') }}">
                                             </center>
                                             <h3>Third</h3>
                                             <table class="table table-sm">
@@ -284,7 +284,7 @@
                                     <div class="card offercard" style="height:100%;">
                                         <div class="card-body">
                                             <center>
-                                                <img style="max-width:100%;height:120px;object-fit:cover;" class="mb-3" src="{{ asset('/images/1111.jpg') }}">
+                                                <img style="max-width:100%;height:120px;object-fit:cover;" class="mb-3" src="{{ asset('/images/1111.png') }}">
                                             </center>
                                             <h3>Fourth</h3>
                                             <table class="table table-sm">
@@ -336,7 +336,7 @@
                                     <div class="card offercard" style="height:100%;">
                                         <div class="card-body">
                                             <center>
-                                                <img style="max-width:100%;height:120px;object-fit:cover;" class="mb-3" src="{{ asset('/images/1111.jpg') }}">
+                                                <img style="max-width:100%;height:120px;object-fit:cover;" class="mb-3" src="{{ asset('/images/1111.png') }}">
                                             </center>
                                             <h3>Fiveth</h3>
                                             <table class="table table-sm">
@@ -388,7 +388,7 @@
                                     <div class="card offercard" style="height:100%;">
                                         <div class="card-body">
                                             <center>
-                                                <img style="max-width:100%;height:120px;object-fit:cover;" class="mb-3" src="{{ asset('/images/1111.jpg') }}">
+                                                <img style="max-width:100%;height:120px;object-fit:cover;" class="mb-3" src="{{ asset('/images/1111.png') }}">
                                             </center>
                                             <h3>Sixth</h3>
                                             <table class="table table-sm">
@@ -440,7 +440,7 @@
                                     <div class="card offercard" style="height:100%;">
                                         <div class="card-body">
                                             <center>
-                                                <img style="max-width:100%;height:120px;object-fit:cover;" class="mb-3" src="{{ asset('/images/1111.jpg') }}">
+                                                <img style="max-width:100%;height:120px;object-fit:cover;" class="mb-3" src="{{ asset('/images/1111.png') }}">
                                             </center>
                                             <h3>Seventh</h3>
                                             <table class="table table-sm">
@@ -492,7 +492,7 @@
                                     <div class="card offercard" style="height:100%;">
                                         <div class="card-body">
                                             <center>
-                                                <img style="max-width:100%;height:120px;object-fit:cover;" class="mb-3" src="{{ asset('/images/1111.jpg') }}">
+                                                <img style="max-width:100%;height:120px;object-fit:cover;" class="mb-3" src="{{ asset('/images/1111.png') }}">
                                             </center>
                                             <h3>Eigth</h3>
                                             <table class="table table-sm">
@@ -544,7 +544,7 @@
                                     <div class="card offercard" style="height:100%;">
                                         <div class="card-body">
                                             <center>
-                                                <img style="max-width:100%;height:120px;object-fit:cover;" class="mb-3" src="{{ asset('/images/1111.jpg') }}">
+                                                <img style="max-width:100%;height:120px;object-fit:cover;" class="mb-3" src="{{ asset('/images/1111.png') }}">
                                             </center>
                                             <h3>Nineth</h3>
                                             <table class="table table-sm">
