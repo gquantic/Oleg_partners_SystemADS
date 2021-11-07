@@ -2,11 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\User;
 
 class OfferController extends Controller
 {
+    use AuthenticatesUsers;
+
+    public function getOffers()
+    {
+        return DB::table('offers')->where('author', Auth::user()->id)->get();
+    }
+
     public function createOffer(Request $request)
     {
         $request->validate([
@@ -18,6 +28,7 @@ class OfferController extends Controller
         $request->image->move(public_path('uploads'), $imageName);
 
         DB::table('offers')->insert([
+            'author' => Auth::user()->id,
             'image' => $imageName,
             'title' => $_POST['name'],
             'url' => $_POST['url'],
