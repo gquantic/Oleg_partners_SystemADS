@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OfferController;
 
 
 /*
@@ -89,8 +90,8 @@ Route::get('/offer/add', function () {
     return view('offer/add');
 })->name('offer-add')->middleware('auth');
 
-Route::get('/offer/my', function () {
-    return view('offer/my-offers');
+Route::get('/offer/my', function (OfferController $offerController) {
+    return view('offer/my-offers', ['offers' => $offerController->getOffers()]);
 })->name('offer-my')->middleware('auth');
 
 Route::get('/offer/api', function () {
