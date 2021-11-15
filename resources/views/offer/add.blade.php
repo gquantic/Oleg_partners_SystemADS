@@ -32,7 +32,7 @@
                                         <p>2. Если вы желаете продвигать или продавать несколько товаров разной категории, для более успешного продвижения вам потребуется создать несколько офферов. Пример: Он-лайн магазин, все для мужчин и Женщин (мужские духи, женские духи) Так как в данном случае Веб мастерам потребуется вести к вам две категории мотивированных клиентов.</p>
                                     </div>
                                 </div>
-                                <input type="button" name="next" class="next action-button" value="Далее" style="background: #0d6efd;" />
+                                <input type="button" name="next" class="next action-button" value="Далее" style="background: #0d6efd; border-radius: 15px;" />
                         </fieldset>
                         <fieldset>
                             <div class="container">
@@ -44,8 +44,8 @@
                                     <input type="file" name="image" placeholder="First Name" class="dropify" accept="image/*" />
                                 </div>
                             </div>
-                            <input type="button" name="previous" class="previous action-button-previous" value="Назад" />
-                            <input type="button" name="next" class="next action-button" value="Далее" style="background: #0d6efd;" />
+                            <input type="button" name="previous" class="previous action-button-previous" style="border-radius: 15px;" value="Назад" />
+                            <input type="button" name="next" class="next action-button" value="Далее" style="background: #0d6efd; border-radius: 15px;" />
                         </fieldset>
                         <fieldset>
                             <div class="container">
@@ -100,8 +100,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <input type="button" name="previous" class="previous action-button-previous" value="Назад" />
-                            <input type="button" name="next" class="next action-button" value="Далее" style="background: #0d6efd;" />
+                            <input type="button" name="previous" class="previous action-button-previous" style="border-radius: 15px;" value="Назад" />
+                            <input type="button" name="next" class="next action-button" value="Далее" style="background: #0d6efd; border-radius: 15px;" />
                         </fieldset>
                         <fieldset>
                             <div class="container">
@@ -181,8 +181,8 @@
                                     </div>
                                 </div>
                             </div>
-                                <input type="button" name="previous" class="previous action-button-previous" value="Назад" />
-                                <input type="submit" name="make_payment" class="action-button px-0" value="Отправить" style="background: #0d6efd;" />
+                                <input type="button" name="previous" class="previous action-button-previous" style="border-radius: 15px;" value="Назад" />
+                                <input type="submit" name="make_payment" class="action-button px-0" value="Отправить" style="background: #0d6efd; border-radius: 15px;" />
                         </fieldset>
                     </form>
                     <script src="{{ asset('/js/form-wizard.js') }}"></script>
