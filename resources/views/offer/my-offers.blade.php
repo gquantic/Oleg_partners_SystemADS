@@ -28,7 +28,7 @@
             <div class="row product-grid">
                 @foreach($offers as $offer)
                     <div class="col-3">
-                        <a href="">
+                        <a href="/offer/{{ $offer->id }}">
                             <div class="card">
                                 <div style="background: url('/uploads/{{ $offer->image }}');background-size: cover;background-repeat: no-repeat;
                                     background-position: center center; height: 200px; width: 100%;"></div>

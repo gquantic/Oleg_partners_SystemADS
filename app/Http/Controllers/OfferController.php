@@ -12,11 +12,46 @@ class OfferController extends Controller
 {
     use AuthenticatesUsers;
 
+    /**
+     * Вывод оффера
+     *
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function showOffer($id)
+    {
+        $data = DB::table('offers')->where('id', $id)->first();
+
+        return view('offers.view', ['author' => $this->checkAuthor($data), 'data' => $data]);
+    }
+
+    /**
+     * Проверка пользователя, является ли он автором данного оффера
+     *
+     * @param $data
+     * @return bool
+     */
+    private function checkAuthor($data)
+    {
+        return $data->author == Auth::user()->id ? $author = true : $author = false;
+    }
+
+    /**
+     * Получение всех офферов
+     *
+     * @return \Illuminate\Support\Collection
+     */
     public function getOffers()
     {
         return DB::table('offers')->where('author', Auth::user()->id)->get();
     }
 
+    /**
+     * Создание оффера
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function createOffer(Request $request)
     {
         $request->validate([

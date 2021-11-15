@@ -81,9 +81,9 @@ Route::get('/finance/pay', function () {
 })->name('finance-pay')->middleware('auth');
 
 /*
-|--------------------------------------------------------------------------
-| Офферы. Добавление, просмотр своих офферов и API
-|--------------------------------------------------------------------------
+|----------------------------------------------------------------------------------
+| Офферы. Добавление, просмотр своих офферов, просмотр подробностей оффера и API
+|----------------------------------------------------------------------------------
 */
 
 Route::get('/offer/add', function () {
@@ -97,7 +97,12 @@ Route::get('/offer/my', function (OfferController $offerController) {
 Route::get('/offer/api', function () {
     return view('offer.api');
 })->name('offer-api')->middleware('auth');
-Route::get('/offer/my/{id}', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth');
+
+Route::get('/offer/pay', function () {
+    return view('offer.pay');
+})->name('offer-pay')->middleware('auth');
+
+Route::get('/offer/{id}', [App\Http\Controllers\OfferController::class, 'showOffer'])->middleware('auth');
 
 /*
 |--------------------------------------------------------------------------
@@ -110,10 +115,8 @@ Route::get('/offers/links', function () {
 })->name('offers-links')->middleware('auth');
 
 Route::get('/offers/catalog', function () {
-    return view('offers.catalog');
+    return view('offers.catalog', ['offers' => DB::table('offers')->get()]);
 })->name('offers-catalog')->middleware('auth');
-
-Route::get('/offers/view/{id}', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth');
 
 /*
 |--------------------------------------------------------------------------
