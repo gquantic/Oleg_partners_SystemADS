@@ -26,21 +26,24 @@
                                         </a>
                                         перед началом.
                                     </div>
-                                    <div class="form-card">
+                                    <div class="form-card row row-cols-auto">
                                         <h2 class="fs-title">Правила создания оффера</h2>
+
                                         <p>1. Если вы желаете продвигать или продавать несколько товаров одной категории, то можно создать единый оффер. Пример: Косметика для женщин (духи, туш для ресниц, пудра)</p>
                                         <p>2. Если вы желаете продвигать или продавать несколько товаров разной категории, для более успешного продвижения вам потребуется создать несколько офферов. Пример: Он-лайн магазин, все для мужчин и Женщин (мужские духи, женские духи) Так как в данном случае Веб мастерам потребуется вести к вам две категории мотивированных клиентов.</p>
+
                                     </div>
                                 </div>
                                 <input type="button" name="next" class="next action-button" value="Далее" style="background: #0d6efd; border-radius: 15px;" />
                         </fieldset>
                         <fieldset>
                             <div class="container">
-                                <div class="col-lg-12 alert alert-primary">
-                                    <b>Изображение оффера</b> дает уникальность и узнаваемость в общей таблице
-                                </div>
-                                <div class="form-card">
-                                    <h2 class="fs-title">Изображение оффера</h2>
+{{--                                <div class="col-lg-12 alert alert-primary">--}}
+{{--                                    <b>Изображение оффера</b> дает уникальность и узнаваемость в общей таблице--}}
+{{--                                </div>--}}
+                                <div class="form-card row row-cols-auto">
+                                    <a class="fs-title" data-bs-toggle="tooltip" data-bs-placement="top" title="Изображение оффера дает уникальность и узнаваемость в общей таблице" data-bs-original-title="Tooltip on left"><u>Изображение оффера</u></a>
+                                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Изображение оффера дает уникальность и узнаваемость в общей таблице" data-bs-original-title="Tooltip on left"><i class="fadeIn animated bx bx-help-circle"></i></button>
                                     <input type="file" name="image" placeholder="First Name" class="dropify" accept="image/*" />
                                 </div>
                             </div>
@@ -49,27 +52,27 @@
                         </fieldset>
                         <fieldset>
                             <div class="container">
-                                <div class="col-lg-12 alert alert-primary">
-                                    <b>Название оффера</b> должно состоять или 2-3 слов кратко описвающих ваш продукт или компанию.
-                                    <br>
-                                    <b>URL проекта вашего оффера</b> - должен содержать корневой адрес сайта вашего проекта. Пример: example.com
-                                    <br>
-                                    <b>Тип проекта</b> - выберите под какую сферу деятельности подпадает ваш проект
-                                    <br>
-                                    <b>В описание оффера</b> кратко опишите суть вашего проекта и продукт который вы желаете продвигать
-                                </div>
-                                <div class="form-card">
+{{--                                <div class="col-lg-12 alert alert-primary">--}}
+{{--                                    <b>Название оффера</b> должно состоять или 2-3 слов кратко описвающих ваш продукт или компанию.--}}
+{{--                                    <br>--}}
+{{--                                    <b>URL проекта вашего оффера</b> - должен содержать корневой адрес сайта вашего проекта. Пример: example.com--}}
+{{--                                    <br>--}}
+{{--                                    <b>Тип проекта</b> - выберите под какую сферу деятельности подпадает ваш проект--}}
+{{--                                    <br>--}}
+{{--                                    <b>В описание оффера</b> кратко опишите суть вашего проекта и продукт который вы желаете продвигать--}}
+{{--                                </div>--}}
+                                <div class="form-card row-cols-auto">
                                     <h2 class="fs-title">Описание оффера</h2>
                                     <div class="form-group">
-                                        <label for="name">Название оффера</label>
+                                        <label for="name" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Название оффера должно состоять или 2-3 слов кратко описвающих ваш продукт или компанию"><u>Название оффера</u></label>
                                         <input class="form-control" name="name" type="text">
                                     </div>
                                     <div class="form-group">
-                                        <label>Укажите основной url проекта вашего оффера</label>
+                                        <label class="text-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="URL проекта вашего оффера - должен содержать корневой адрес сайта вашего проекта. Пример: example.com"><u>Укажите основной url проекта вашего оффера</u></label>
                                         <input class="form-control" name="url" type="text">
                                     </div>
                                     <div class="form-group">
-                                        <label for="project_type">Тип проекта</label>
+                                        <label for="project_type" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Тип проекта - выберите под какую сферу деятельности попадает ваш проект"><u>Тип проекта</u></label>
                                         <select class="form-control" name="project_type" id="project_type">
                                             <option value="1">Рестораны с он-лайн заказом</option>
                                             <option value="2">Аксессуары и Гаджеты</option>
@@ -94,7 +97,7 @@
                                         </select>
                                     </div>
                                     <div class="form-group mt-3">
-                                        <label>Детальное описание оффера</label>
+                                        <label class="text-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="В описание оффера кратко опишите суть вашего проекта и продукт который вы желаете продвигать"><u>Детальное описание оффера</u></label>
                                         <small>(Детальное описание действия по офферу)</small>
                                         <textarea class="form-control" name="description"></textarea>
                                     </div>
@@ -105,17 +108,17 @@
                         </fieldset>
                         <fieldset>
                             <div class="container">
-                                <div class="col-lg-12 alert alert-primary">
-                                    <b>Тип действия</b> определяет ключевое значение для вебмастеров и клиентов. Так-же от него зависит система оплаты вознаграждения вебмастеров.
-                                    <br>
-                                    <b>URL для получения трафика</b> - если вы хотите получать трафик на рефф ссылку или на специальный под домен что бы отслеживать трафик или продажи, укажите дополнительную ссылку. Если вы хотите получать трафик на основной домен, то не требуется заполнять данное поле
-                                </div>
-                                <div class="form-card">
+{{--                                <div class="col-lg-12 alert alert-primary">--}}
+{{--                                    <b>Тип действия</b> определяет ключевое значение для вебмастеров и клиентов. Так-же от него зависит система оплаты вознаграждения вебмастеров.--}}
+{{--                                    <br>--}}
+{{--                                    <b>URL для получения трафика</b> - если вы хотите получать трафик на рефф ссылку или на специальный под домен что бы отслеживать трафик или продажи, укажите дополнительную ссылку. Если вы хотите получать трафик на основной домен, то не требуется заполнять данное поле--}}
+{{--                                </div>--}}
+                                <div class="form-card row row-cols-auto">
                                     <h2 class="fs-title">Настройки вознаграждения</h2>
                                     <div class="row">
                                         <div class="col-lg-7 m-auto ">
                                             <div class="form-group mb-2">
-                                                <label>Тип действий</label>
+                                                <label class="text-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Тип действия определяет ключевое значение для вебмастеров и клиентов. Так-же от него зависит система оплаты вознаграждения вебмастеров."><u>Тип действий</u></label>
                                                 <select class="form-control" name="type_do">
                                                     <option value="1">Sale</option>
                                                     <option value="2">Revshare</option>
@@ -168,7 +171,7 @@
                                                 </div>
                                                 <div class="col-xs-12 col-md-12">
                                                     <div class="form-group">
-                                                        <label><label for="traffic_url">URL для получения трафика</label></label>
+                                                        <label><label for="traffic_url" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="URL для получения трафика - если вы хотите получать трафик на рефф ссылку или на специальный под домен что бы отслеживать трафик или продажи, укажите дополнительную ссылку. Если вы хотите получать трафик на основной домен, то не требуется заполнять данное поле"><u>URL для получения трафика</u></label></label>
                                                         <input type="text" name="urltraffic" class="form-control">
                                                     </div>
                                                     <div class="form-group">
@@ -191,6 +194,15 @@
             </div>
         </div>
     </div>
+    <script>
+        $(function () {
+            $('[data-bs-toggle="tooltip"]').tooltip()
+
+        }
+        );
+
+    </script>
+
 @endsection
 
 @section('post-upload')
