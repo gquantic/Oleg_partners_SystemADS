@@ -18,7 +18,7 @@
                                     <h5 class="mb-0">Мои офферы</h5>
                                 </div>
 
-                                <a href="{{ route('offer-add') }}" class="btn btn-primary">Добавить оффер</a>
+                                <a href="{{ route('off-pay') }}" class="btn btn-primary">Добавить оффер</a>
                             </div>
                         </div>
                     </div>
