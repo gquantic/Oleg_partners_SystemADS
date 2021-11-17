@@ -102,6 +102,10 @@ Route::get('/offer/pay', function () {
     return view('offer.pay');
 })->name('offer-pay')->middleware('auth');
 
+Route::get('/offer/offpay', function () {
+    return view('offer.offpay');
+})->name('off-pay')->middleware('auth');
+
 Route::get('/offer/{id}', [App\Http\Controllers\OfferController::class, 'showOffer'])->middleware('auth');
 
 /*

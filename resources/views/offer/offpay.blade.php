@@ -18,32 +18,32 @@
                         </ul>
                         <!-- fieldsets -->
                         <fieldset>
-                                <div class="container">
-                                    <div class="col-lg-12 alert alert-primary">
-                                        Пожалуйста, ознакомьтесь с
-                                        <a href="/rules/add-offer" style="color: inherit; border-bottom: 1px solid;" target="_blank">
-                                            <b>правилами создания офферов</b>
-                                        </a>
-                                        перед началом.
-                                    </div>
-                                    <div class="form-card row row-cols-auto">
-                                        <h2 class="fs-title">Правила создания оффера</h2>
-
-                                        <p>1. Если вы желаете продвигать или продавать несколько товаров одной категории, то можно создать единый оффер. Пример: Косметика для женщин (духи, туш для ресниц, пудра)</p>
-                                        <p>2. Если вы желаете продвигать или продавать несколько товаров разной категории, для более успешного продвижения вам потребуется создать несколько офферов. Пример: Он-лайн магазин, все для мужчин и Женщин (мужские духи, женские духи) Так как в данном случае Веб мастерам потребуется вести к вам две категории мотивированных клиентов.</p>
-
-                                    </div>
+                            <div class="container">
+                                <div class="col-lg-12 alert alert-primary">
+                                    Пожалуйста, ознакомьтесь с
+                                    <a href="/rules/add-offer" style="color: inherit; border-bottom: 1px solid;" target="_blank">
+                                        <b>правилами создания офферов</b>
+                                    </a>
+                                    перед началом.
                                 </div>
-                                <input type="button" name="next" class="next action-button" value="Далее" style="background: #0d6efd; border-radius: 15px;" />
+                                <div class="form-card row row-cols-auto">
+                                    <h2 class="fs-title">Правила создания оффера</h2>
+
+                                    <p>1. Если вы желаете продвигать или продавать несколько товаров одной категории, то можно создать единый оффер. Пример: Косметика для женщин (духи, туш для ресниц, пудра)</p>
+                                    <p>2. Если вы желаете продвигать или продавать несколько товаров разной категории, для более успешного продвижения вам потребуется создать несколько офферов. Пример: Он-лайн магазин, все для мужчин и Женщин (мужские духи, женские духи) Так как в данном случае Веб мастерам потребуется вести к вам две категории мотивированных клиентов.</p>
+
+                                </div>
+                            </div>
+                            <input type="button" name="next" class="next action-button" value="Далее" style="background: #0d6efd; border-radius: 15px;" />
                         </fieldset>
                         <fieldset>
                             <div class="container">
-{{--                                <div class="col-lg-12 alert alert-primary">--}}
-{{--                                    <b>Изображение оффера</b> дает уникальность и узнаваемость в общей таблице--}}
-{{--                                </div>--}}
+                                {{--                                <div class="col-lg-12 alert alert-primary">--}}
+                                {{--                                    <b>Изображение оффера</b> дает уникальность и узнаваемость в общей таблице--}}
+                                {{--                                </div>--}}
                                 <div class="form-card row row-cols-auto">
                                     <a class="fs-title" data-bs-toggle="popover"  title="Изображение оффера дает уникальность и узнаваемость в общей таблице"><u>Изображение оффера</u></a>
-                                        <i type="button" class="btn-xs btn-link " data-bs-toggle="popover"  data-bs-content="Изображение оффера дает уникальность и узнаваемость в общей таблице" title="Изображение оффера дает уникальность и узнаваемость в общей таблице"> <i class="fadeIn animated bx bx-help-circle"></i></i>
+                                    <i type="button" class="btn-xs btn-link " data-bs-toggle="popover"  data-bs-content="Изображение оффера дает уникальность и узнаваемость в общей таблице" title="Изображение оффера дает уникальность и узнаваемость в общей таблице"> <i class="fadeIn animated bx bx-help-circle"></i></i>
                                     <input type="file" name="image" placeholder="First Name" class="dropify" accept="image/*" />
                                 </div>
                             </div>
@@ -52,15 +52,15 @@
                         </fieldset>
                         <fieldset>
                             <div class="container">
-{{--                                <div class="col-lg-12 alert alert-primary">--}}
-{{--                                    <b>Название оффера</b> должно состоять или 2-3 слов кратко описвающих ваш продукт или компанию.--}}
-{{--                                    <br>--}}
-{{--                                    <b>URL проекта вашего оффера</b> - должен содержать корневой адрес сайта вашего проекта. Пример: example.com--}}
-{{--                                    <br>--}}
-{{--                                    <b>Тип проекта</b> - выберите под какую сферу деятельности подпадает ваш проект--}}
-{{--                                    <br>--}}
-{{--                                    <b>В описание оффера</b> кратко опишите суть вашего проекта и продукт который вы желаете продвигать--}}
-{{--                                </div>--}}
+                                {{--                                <div class="col-lg-12 alert alert-primary">--}}
+                                {{--                                    <b>Название оффера</b> должно состоять или 2-3 слов кратко описвающих ваш продукт или компанию.--}}
+                                {{--                                    <br>--}}
+                                {{--                                    <b>URL проекта вашего оффера</b> - должен содержать корневой адрес сайта вашего проекта. Пример: example.com--}}
+                                {{--                                    <br>--}}
+                                {{--                                    <b>Тип проекта</b> - выберите под какую сферу деятельности подпадает ваш проект--}}
+                                {{--                                    <br>--}}
+                                {{--                                    <b>В описание оффера</b> кратко опишите суть вашего проекта и продукт который вы желаете продвигать--}}
+                                {{--                                </div>--}}
                                 <div class="form-card row-cols-auto">
                                     <h2 class="fs-title">Описание оффера</h2>
                                     <div class="form-group">
@@ -113,11 +113,11 @@
                         </fieldset>
                         <fieldset>
                             <div class="container">
-{{--                                <div class="col-lg-12 alert alert-primary">--}}
-{{--                                    <b>Тип действия</b> определяет ключевое значение для вебмастеров и клиентов. Так-же от него зависит система оплаты вознаграждения вебмастеров.--}}
-{{--                                    <br>--}}
-{{--                                    <b>URL для получения трафика</b> - если вы хотите получать трафик на рефф ссылку или на специальный под домен что бы отслеживать трафик или продажи, укажите дополнительную ссылку. Если вы хотите получать трафик на основной домен, то не требуется заполнять данное поле--}}
-{{--                                </div>--}}
+                                {{--                                <div class="col-lg-12 alert alert-primary">--}}
+                                {{--                                    <b>Тип действия</b> определяет ключевое значение для вебмастеров и клиентов. Так-же от него зависит система оплаты вознаграждения вебмастеров.--}}
+                                {{--                                    <br>--}}
+                                {{--                                    <b>URL для получения трафика</b> - если вы хотите получать трафик на рефф ссылку или на специальный под домен что бы отслеживать трафик или продажи, укажите дополнительную ссылку. Если вы хотите получать трафик на основной домен, то не требуется заполнять данное поле--}}
+                                {{--                                </div>--}}
                                 <div class="form-card row row-cols-auto">
                                     <h2 class="fs-title">Настройки вознаграждения</h2>
                                     <div class="row">
@@ -191,8 +191,8 @@
                                     </div>
                                 </div>
                             </div>
-                                <input type="button" name="previous" class="previous action-button-previous" style="border-radius: 15px;" value="Назад" />
-                                <input type="submit" name="make_payment" class="action-button px-0" value="Отправить" style="background: #0d6efd; border-radius: 15px;" />
+                            <input type="button" name="previous" class="previous action-button-previous" style="border-radius: 15px;" value="Назад" />
+                            <input type="submit" name="make_payment" class="action-button px-0" value="Отправить" style="background: #0d6efd; border-radius: 15px;" />
                         </fieldset>
                     </form>
                     <script src="{{ asset('/js/form-wizard.js') }}"></script>
@@ -201,24 +201,5 @@
             </div>
         </div>
     </div>
-    <script>
 
-        $(function () {
-            $('[data-bs-toggle="popover"]').popover();
-        })
-    </script>
-
-@endsection
-
-@section('post-upload')
-    <style>
-        .imageuploadify-container img {
-            width: 150px;
-        }
-    </style>
-    <script>
-        $(document).ready(function () {
-            $('#image-uploadify').imageuploadify();
-        })
-    </script>
 @endsection
