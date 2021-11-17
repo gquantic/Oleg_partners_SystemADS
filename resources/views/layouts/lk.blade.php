@@ -26,6 +26,8 @@
 
     <link href="{{ asset('/plugins/Drag-And-Drop/dist/imageuploadify.min.css') }}" rel="stylesheet" />
 
+    <link rel="stylesheet" href="{{ asset('/css/self.css') }}"/>
+
     <title>@yield('page-title') | SystemADS</title>
 </head>
 
