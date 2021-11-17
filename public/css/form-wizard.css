@@ -25,6 +25,7 @@
     padding-top: 20px;
     border: 0 none;
     border-radius: 0.5rem;
+    background: none; !important;
     box-sizing: border-box;
     width: 100%;
     margin: 0;
@@ -149,22 +150,22 @@ select.list-dt:focus {
 
 #progressbar #account:before {
     font-family: FontAwesome;
-    content: "\f023"
+    content: "\0021"
 }
 
 #progressbar #personal:before {
     font-family: FontAwesome;
-    content: "\f007"
+    content: "\2730"
 }
 
 #progressbar #payment:before {
     font-family: FontAwesome;
-    content: "\f09d"
+    content: "\270E"
 }
 
 #progressbar #confirm:before {
     font-family: FontAwesome;
-    content: "\f00c"
+    content: "\0024"
 }
 
 #progressbar li:before {
