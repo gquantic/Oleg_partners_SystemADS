@@ -42,8 +42,8 @@
 {{--                                    <b>Изображение оффера</b> дает уникальность и узнаваемость в общей таблице--}}
 {{--                                </div>--}}
                                 <div class="form-card row row-cols-auto">
-                                    <a class="fs-title" data-bs-toggle="tooltip" data-bs-placement="top" title="Изображение оффера дает уникальность и узнаваемость в общей таблице" data-bs-original-title="Tooltip on left"><u>Изображение оффера</u></a>
-                                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Изображение оффера дает уникальность и узнаваемость в общей таблице" data-bs-original-title="Tooltip on left"><i class="fadeIn animated bx bx-help-circle"></i></button>
+                                    <a class="fs-title" data-toggle="tooltip"  title="Изображение оффера дает уникальность и узнаваемость в общей таблице" ><u>Изображение оффера</u></a>
+                                        <button type="button" class="btn btn-outline-primary" data-toggle="tooltip" title="Изображение оффера дает уникальность и узнаваемость в общей таблице" ><i class="fadeIn animated bx bx-help-circle"></i></button>
                                     <input type="file" name="image" placeholder="First Name" class="dropify" accept="image/*" />
                                 </div>
                             </div>
@@ -64,15 +64,15 @@
                                 <div class="form-card row-cols-auto">
                                     <h2 class="fs-title">Описание оффера</h2>
                                     <div class="form-group">
-                                        <label for="name" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Название оффера должно состоять или 2-3 слов кратко описвающих ваш продукт или компанию"><u>Название оффера</u></label>
+                                        <label for="name" class="text-primary" data-toggle="tooltip"  title="Название оффера должно состоять или 2-3 слов кратко описвающих ваш продукт или компанию"><u>Название оффера</u></label>
                                         <input class="form-control" name="name" type="text">
                                     </div>
                                     <div class="form-group">
-                                        <label class="text-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="URL проекта вашего оффера - должен содержать корневой адрес сайта вашего проекта. Пример: example.com"><u>Укажите основной url проекта вашего оффера</u></label>
+                                        <label class="text-primary" data-toggle="tooltip" title="URL проекта вашего оффера - должен содержать корневой адрес сайта вашего проекта. Пример: example.com"><u>Укажите основной url проекта вашего оффера</u></label>
                                         <input class="form-control" name="url" type="text">
                                     </div>
                                     <div class="form-group">
-                                        <label for="project_type" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Тип проекта - выберите под какую сферу деятельности попадает ваш проект"><u>Тип проекта</u></label>
+                                        <label for="project_type" class="text-primary" data-toggle="tooltip"  title="Тип проекта - выберите под какую сферу деятельности попадает ваш проект"><u>Тип проекта</u></label>
                                         <select class="form-control" name="project_type" id="project_type">
                                             <option value="1">Рестораны с он-лайн заказом</option>
                                             <option value="2">Аксессуары и Гаджеты</option>
@@ -97,7 +97,7 @@
                                         </select>
                                     </div>
                                     <div class="form-group mt-3">
-                                        <label class="text-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="В описание оффера кратко опишите суть вашего проекта и продукт который вы желаете продвигать"><u>Детальное описание оффера</u></label>
+                                        <label class="text-primary" data-toggle="tooltip"  title="В описание оффера кратко опишите суть вашего проекта и продукт который вы желаете продвигать"><u>Детальное описание оффера</u></label>
                                         <small>(Детальное описание действия по офферу)</small>
                                         <textarea class="form-control" name="description"></textarea>
                                     </div>
@@ -118,7 +118,7 @@
                                     <div class="row">
                                         <div class="col-lg-7 m-auto ">
                                             <div class="form-group mb-2">
-                                                <label class="text-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Тип действия определяет ключевое значение для вебмастеров и клиентов. Так-же от него зависит система оплаты вознаграждения вебмастеров."><u>Тип действий</u></label>
+                                                <label class="text-primary" data-bs-toggle="tooltip"  title="Тип действия определяет ключевое значение для вебмастеров и клиентов. Так-же от него зависит система оплаты вознаграждения вебмастеров."><u>Тип действий</u></label>
                                                 <select class="form-control" name="type_do">
                                                     <option value="1">Sale</option>
                                                     <option value="2">Revshare</option>
@@ -195,12 +195,9 @@
         </div>
     </div>
     <script>
-        $(function () {
-            $('[data-bs-toggle="tooltip"]').tooltip()
-
-        }
-        );
-
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
     </script>
 
 @endsection
