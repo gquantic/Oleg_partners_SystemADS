@@ -28,6 +28,10 @@
 
     <link rel="stylesheet" href="{{ asset('/css/self.css') }}"/>
 
+    <script src="https://kit.fontawesome.com/ada758ae4a.js" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <title>@yield('page-title') | SystemADS</title>
 </head>
 

@@ -149,23 +149,23 @@ select.list-dt:focus {
 }
 
 #progressbar #account:before {
-    font-family: FontAwesome;
-    content: "\0021"
+    font-family: Material Icons;
+    content: "\f052"
 }
 
 #progressbar #personal:before {
-    font-family: FontAwesome;
-    content: "\2730"
+    font-family: Material Icons;
+    content: "\e851"
 }
 
 #progressbar #payment:before {
-    font-family: FontAwesome;
-    content: "\270E"
+    font-family: Material Icons;
+    content: "\e616"
 }
 
 #progressbar #confirm:before {
-    font-family: FontAwesome;
-    content: "\0024"
+    font-family: Material Icons;
+    content: "\e926"
 }
 
 #progressbar li:before {
@@ -225,4 +225,12 @@ select.list-dt:focus {
 .fit-image {
     width: 100%;
     object-fit: cover
+}
+
+.oo{
+    margin-top: 10px;
+}
+
+.oa{
+    margin-bottom: 10px;
 }

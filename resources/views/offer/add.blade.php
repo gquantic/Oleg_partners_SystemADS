@@ -12,7 +12,7 @@
                         @csrf
                         <ul id="progressbar">
                             <li class="active" id="account"><strong>Правила создания оффера</strong></li>
-                            <li id="personal"><strong>Изображение оффера</strong></li>
+                            <li id="personal"><strong> Изображение оффера</strong></li>
                             <li id="payment"><strong>Описание оффера</strong></li>
                             <li id="confirm"><strong>Тип действий</strong></li>
                         </ul>
@@ -64,19 +64,25 @@
                                 <div class="form-card row-cols-auto">
                                     <h2 class="fs-title">Описание оффера</h2>
                                     <div class="form-group">
-                                        <label for="name">Название оффера</label>
-                                        <i type="button" class="btn btn-link" data-bs-toggle="popover"  data-bs-content="Название оффера должно состоять или 2-3 слов кратко описвающих ваш продукт или компанию"> <i class="fadeIn animated bx bx-help-circle"></i></i>
+                                        <div class="oa">
+                                            <label for="name">Название оффера</label>
+                                            <i type="button" class="btn btn-link" data-bs-toggle="popover"  data-bs-content="Название оффера должно состоять или 2-3 слов кратко описвающих ваш продукт или компанию"> <i class="fadeIn animated bx bx-help-circle"></i></i>
+                                        </div>
                                         <input class="form-control" name="name" type="text">
                                     </div>
                                     <div class="form-group">
-                                        <label>Укажите основной url проекта вашего оффера</label>
-                                        <i type="button" class="btn btn-link" data-bs-toggle="popover"  data-bs-content="URL проекта вашего оффера - должен содержать корневой адрес сайта вашего проекта. Пример: example.com"> <i class="fadeIn animated bx bx-help-circle"></i></i>
+                                        <div class="oa">
+                                            <label>Укажите основной url проекта вашего оффера</label>
+                                            <i type="button" class="btn btn-link" data-bs-toggle="popover"  data-bs-content="URL проекта вашего оффера - должен содержать корневой адрес сайта вашего проекта. Пример: example.com"> <i class="fadeIn animated bx bx-help-circle"></i></i>
+                                        </div>
                                         <input class="form-control" name="url" type="text">
 
                                     </div>
                                     <div class="form-group">
-                                        <label for="project_type">Тип проекта</label>
-                                        <i type="button" class="btn btn-link" data-bs-toggle="popover"  data-bs-content="Тип проекта - выберите под какую сферу деятельности попадает ваш проект"> <i class="fadeIn animated bx bx-help-circle"></i></i>
+                                        <div class="oa">
+                                            <label for="project_type">Тип проекта</label>
+                                            <i type="button" class="btn btn-link" data-bs-toggle="popover"  data-bs-content="Тип проекта - выберите под какую сферу деятельности попадает ваш проект"> <i class="fadeIn animated bx bx-help-circle"></i></i>
+                                        </div>
                                         <select class="form-control" name="project_type" id="project_type">
                                             <option value="1">Рестораны с он-лайн заказом</option>
                                             <option value="2">Аксессуары и Гаджеты</option>
@@ -101,9 +107,11 @@
                                         </select>
                                     </div>
                                     <div class="form-group mt-3">
-                                        <label>Детальное описание оффера</label>
-                                        <small>(Детальное описание действия по офферу)</small>
-                                        <i type="button" class="btn btn-link" data-bs-toggle="popover"  data-bs-content="В описание оффера кратко опишите суть вашего проекта и продукт который вы желаете продвигать"><i class="fadeIn animated bx bx-help-circle"></i></i>
+                                        <div class="oa">
+                                            <label>Детальное описание оффера</label>
+                                            <small>(Детальное описание действия по офферу)</small>
+                                            <i type="button" class="btn btn-link" data-bs-toggle="popover"  data-bs-content="В описание оффера кратко опишите суть вашего проекта и продукт который вы желаете продвигать"><i class="fadeIn animated bx bx-help-circle"></i></i>
+                                        </div>
                                         <textarea class="form-control" name="description"></textarea>
                                     </div>
                                 </div>
@@ -123,8 +131,10 @@
                                     <div class="row">
                                         <div class="col-lg-7 m-auto ">
                                             <div class="form-group mb-2">
-                                                <label>Тип действий</label>
-                                                <i type="button" class="btn btn-link " data-bs-toggle="popover"  data-bs-content="Тип действия определяет ключевое значение для вебмастеров и клиентов. Так-же от него зависит система оплаты вознаграждения вебмастеров."><i class="fadeIn animated bx bx-help-circle"></i></i>
+                                               <div class="oa">
+                                                   <label>Тип действий</label>
+                                                   <i type="button" class="btn btn-link " data-bs-toggle="popover"  data-bs-content="Тип действия определяет ключевое значение для вебмастеров и клиентов. Так-же от него зависит система оплаты вознаграждения вебмастеров."><i class="fadeIn animated bx bx-help-circle"></i></i>
+                                               </div>
                                                 <select class="form-control" name="type_do">
                                                     <option value="1">Sale</option>
                                                     <option value="2">Revshare</option>
@@ -132,13 +142,13 @@
                                                 </select>
                                             </div>
                                             <div class="row">
-                                                <div class="col-xs-12 col-md-12 actions">
+                                                <div class="col-xs-12 col-md-12 actions oo">
                                                     <div class="form-group">
-                                                        <label>Описание действия</label>
+                                                        <label class="oa">Описание действия</label>
                                                         <textarea class="form-control" name="description_do"></textarea>
                                                     </div>
                                                     <div class="form-group mb-2">
-                                                        <label>Валюта товара</label>
+                                                        <label class="oa">Валюта товара</label>
                                                         <select class="form-control" name="currency">
                                                             <option value="USD">USD</option>
                                                             <option value="GBR">GBR</option>
@@ -149,21 +159,21 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="col-xs-12 col-md-12 sellings">
+                                                <div class="col-xs-12 col-md-12 sellings oo">
                                                     <div class="form-group">
-                                                        <label>Укажите процент с продажи</label>
+                                                        <label class="oa">Укажите процент с продажи</label>
                                                         <input class="form-control" type="text" name="percentsale" placeholder="0.00">
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-xs-12 col-md-6 ">
                                                             <div class="form-group">
-                                                                <label>Мин. стоимость продукта</label>
+                                                                <label class="oa">Мин. стоимость продукта</label>
                                                                 <input class="form-control" type="text" name="minprice" placeholder="0.00">
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-12 col-md-6 ">
                                                             <div class="form-group">
-                                                                <label>Макс. стоимость продукта</label>
+                                                                <label class="oa">Макс. стоимость продукта</label>
                                                                 <input class="form-control" type="text" name="maxprice" placeholder="0.00">
                                                             </div>
                                                         </div>
@@ -171,14 +181,16 @@
                                                 </div>
                                                 <div class="col-xs-12 col-md-12">
                                                     <div class="form-group">
-                                                        <label>Максимальное количество продаж в день</label>
+                                                        <label class="oa">Максимальное количество продаж в день</label>
                                                         <input type="text" name="numberofsales">
                                                     </div>
                                                 </div>
                                                 <div class="col-xs-12 col-md-12">
                                                     <div class="form-group">
-                                                        <label for="traffic_url">URL для получения трафика</label>
-                                                        <i type="button" class="btn btn-link" data-bs-toggle="popover"  data-bs-content="URL для получения трафика - если вы хотите получать трафик на рефф ссылку или на специальный под домен что бы отслеживать трафик или продажи, укажите дополнительную ссылку. Если вы хотите получать трафик на основной домен, то не требуется заполнять данное поле"><i class="fadeIn animated bx bx-help-circle"></i></i>
+                                                        <div class="oa">
+                                                            <label for="traffic_url">URL для получения трафика</label>
+                                                            <i type="button" class="btn btn-link" data-bs-toggle="popover"  data-bs-content="URL для получения трафика - если вы хотите получать трафик на рефф ссылку или на специальный под домен что бы отслеживать трафик или продажи, укажите дополнительную ссылку. Если вы хотите получать трафик на основной домен, то не требуется заполнять данное поле"><i class="fadeIn animated bx bx-help-circle"></i></i>
+                                                        </div>
                                                         <input type="text" name="urltraffic" class="form-control">
                                                     </div>
                                                     <div class="form-group">
