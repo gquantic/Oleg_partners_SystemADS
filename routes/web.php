@@ -94,17 +94,21 @@ Route::get('/offer/my', function (OfferController $offerController) {
     return view('offer/my-offers', ['offers' => $offerController->getOffers()]);
 })->name('offer-my')->middleware('auth');
 
+Route::get('/offer/my/{id}', function (OfferController $offerController, $id) {
+    return view('offer/edit', ['offer' => $offerController->getOfferData($id)]);
+})->middleware('auth');
+
+Route::get('/offer/my/{id}/edit', function (OfferController $offerController, $id) {
+    return view('offer/edit', ['data' => $offerController->getOfferData($id)]);
+})->middleware('auth');
+
 Route::get('/offer/api', function () {
     return view('offer.api');
 })->name('offer-api')->middleware('auth');
 
-Route::get('/offer/pay', function () {
-    return view('offer.pay');
-})->name('offer-pay')->middleware('auth');
-
-Route::get('/offer/offpay', function () {
-    return view('offer.offpay');
-})->name('off-pay')->middleware('auth');
+Route::get('/offer/pay/{id}', function ($id) {
+    return view('offer.pay', ['id' => $id]);
+})->middleware('auth');
 
 Route::get('/offer/{id}', [App\Http\Controllers\OfferController::class, 'showOffer'])->middleware('auth');
 
@@ -148,3 +152,5 @@ Route::get('/partner/invite1', function () {
 */
 
 Route::post('action/offer/create', [\App\Http\Controllers\OfferController::class, 'createOffer'])->name('create-offer');
+
+Route::post('action/offer/pay', [\App\Http\Controllers\OfferController::class, 'payOffer'])->middleware('auth');

@@ -33,6 +33,9 @@ class CreateOffersTable extends Migration
             $table->integer('daily_sales');
             $table->text('traffic_url');
 
+            $table->integer('balance')->default(0);
+            $table->boolean('checked')->default(false);
+
             $table->timestamps();
         });
     }

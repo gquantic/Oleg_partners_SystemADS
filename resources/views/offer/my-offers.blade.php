@@ -18,7 +18,7 @@
                                     <h5 class="mb-0">Мои офферы</h5>
                                 </div>
 
-                                <a href="{{ route('off-pay') }}" class="btn btn-primary">Добавить оффер</a>
+                                <a href="{{ route('create-offer') }}" class="btn btn-primary">Добавить оффер</a>
                             </div>
                         </div>
                     </div>
@@ -82,6 +82,10 @@
                                         </tr>
                                         </tbody>
                                     </table>
+
+                                    @if($offer->balance < 1 && $offer->checked == 0)
+                                        <a href="/offer/pay/{{ $offer->id }}" class="text-danger">Необходимо пополнить баланс</p>
+                                    @endif
                                 </div>
                             </div>
                         </a>

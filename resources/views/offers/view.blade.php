@@ -119,7 +119,7 @@
                                         <div class="tab-pane fade" id="balance" role="tabpanel">
                                             <dl class="row">
                                                 <dt class="col-sm-3">Баланс оффера</dt>
-                                                <dd class="col-sm-9">0 <a href="{{ route('offer-pay') }}" class="ml-2">Пополнить</a></dd>
+                                                <dd class="col-sm-9">0 <a href="/offer/pay/{{ $data->id }}" class="ml-2">Пополнить</a></dd>
 
                                                 <dt class="col-sm-3">В холде</dt>
                                                 <dd class="col-sm-9">0</dd>

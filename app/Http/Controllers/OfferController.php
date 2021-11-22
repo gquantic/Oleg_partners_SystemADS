@@ -12,6 +12,11 @@ class OfferController extends Controller
 {
     use AuthenticatesUsers;
 
+    public function getOfferData($id)
+    {
+        return DB::table('offers')->where('id', $id)->first();
+    }
+
     /**
      * Вывод оффера
      *
@@ -20,8 +25,7 @@ class OfferController extends Controller
      */
     public function showOffer($id)
     {
-        $data = DB::table('offers')->where('id', $id)->first();
-
+        $data = $this->getOfferData($id);
         return view('offers.view', ['author' => $this->checkAuthor($data), 'data' => $data]);
     }
 
@@ -44,6 +48,25 @@ class OfferController extends Controller
     public function getOffers()
     {
         return DB::table('offers')->where('author', Auth::user()->id)->get();
+    }
+
+    public function payOffer(Request $request)
+    {
+        $offer = DB::table('offers')->where('author', Auth::user()->id)->where('id', $request->offer_id)->first();
+
+        DB::table('offers')->where('author', Auth::user()->id)->where('id', $request->offer_id)
+            ->update(['balance' => $offer->balance + $request->amount]);
+
+        if ($offer->checked == 0)
+            return redirect("/offer/my/{$offer->id}/edit")->with('success','Баланс успешно пополнен! Продолжите заполнение!');
+        else
+            return redirect("/offer/my/{$offer->id}")->with('success', 'Баланс успешно пополнен!');
+
+        /*
+        *  "amount" => "255"
+        *  "offer_id" => "1"
+        *  "pay" => "Перейти к пополнению"
+        */
     }
 
     /**
