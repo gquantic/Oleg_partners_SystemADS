@@ -84,26 +84,26 @@
                                             <i type="button" class="btn btn-link" data-bs-toggle="popover"  data-bs-content="Тип проекта - выберите под какую сферу деятельности попадает ваш проект"> <i class="fadeIn animated bx bx-help-circle"></i></i>
                                         </div>
                                         <select class="form-control" name="project_type" id="project_type">
-                                            <option value="1">Рестораны с он-лайн заказом</option>
-                                            <option value="2">Аксессуары и Гаджеты</option>
-                                            <option value="3">Инвестиционные проекты – компании</option>
-                                            <option value="4">Акции и акционерные компании</option>
-                                            <option value="5">Форекс и Трейдинг</option>
-                                            <option value="6">Финансовые игры - HYIPs</option>
-                                            <option value="7">МЛМ и Сетевой маркетинг</option>
-                                            <option value="8">Казино и Лотереи – Gambling</option>
-                                            <option value="9">Букмейкеры и Ставки на спорт</option>
-                                            <option value="10">Препараты и фармакология - Nutra</option>
-                                            <option value="11">Обучение, курсы и тренинги</option>
-                                            <option value="12">Онлайн магазины, Продажа товаров - Marketplace </option>
-                                            <option value="13">Кошельки, Платежные шлюзы, Обменники</option>
-                                            <option value="14">Банки и Кредитные организации</option>
-                                            <option value="15">Игры, IT и приложения</option>
-                                            <option value="16">Кэш-Бек сервисы</option>
-                                            <option value="17">Гаджеты</option>
-                                            <option value="18">Dating</option>
-                                            <option value="19">Туризм и Путешествия</option>
-                                            <option value="20">Иное - Другая категория </option>
+                                            <option value="Рестораны с он-лайн заказом">Рестораны с он-лайн заказом</option>
+                                            <option value="Аксессуары и Гаджеты">Аксессуары и Гаджеты</option>
+                                            <option value="Инвестиционные проекты – компании">Инвестиционные проекты – компании</option>
+                                            <option value="Акции и акционерные компании">Акции и акционерные компании</option>
+                                            <option value="Форекс и Трейдинг">Форекс и Трейдинг</option>
+                                            <option value="Финансовые игры - HYIPs">Финансовые игры - HYIPs</option>
+                                            <option value="МЛМ и Сетевой маркетинг">МЛМ и Сетевой маркетинг</option>
+                                            <option value="Казино и Лотереи – Gambling">Казино и Лотереи – Gambling</option>
+                                            <option value="Букмейкеры и Ставки на спорт">Букмейкеры и Ставки на спорт</option>
+                                            <option value="Препараты и фармакология - Nutra">Препараты и фармакология - Nutra</option>
+                                            <option value="Обучение, курсы и тренинги">Обучение, курсы и тренинги</option>
+                                            <option value="Онлайн магазины, Продажа товаров - Marketplace ">Онлайн магазины, Продажа товаров - Marketplace </option>
+                                            <option value="Кошельки, Платежные шлюзы, Обменники">Кошельки, Платежные шлюзы, Обменники</option>
+                                            <option value="Банки и Кредитные организации">Банки и Кредитные организации</option>
+                                            <option value="Игры, IT и приложения">Игры, IT и приложения</option>
+                                            <option value="Кэш-Бек сервисы">Кэш-Бек сервисы</option>
+                                            <option value="Гаджеты">Гаджеты</option>
+                                            <option value="Dating">Dating</option>
+                                            <option value="Туризм и Путешествия">Туризм и Путешествия</option>
+                                            <option value="Иное - Другая категория">Иное - Другая категория</option>
                                         </select>
                                     </div>
                                     <div class="form-group mt-3">
