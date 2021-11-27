@@ -88,8 +88,8 @@
                                             <option value="2">Аксессуары и Гаджеты</option>
                                             <option value="3">Инвестиционные проекты – компании</option>
                                             <option value="4">Акции и акционерные компании</option>
-                                            <option value="5">Форекс и Трейдинг</option>
-                                            <option value="6">Финансовые игры - HYIPs</option>
+                                            <option value="Форекс и Трейдинг">Форекс и Трейдинг</option>
+                                            <option value="Финансовые игры - HYIPs">Финансовые игры - HYIPs</option>
                                             <option value="7">МЛМ и Сетевой маркетинг</option>
                                             <option value="8">Казино и Лотереи – Gambling</option>
                                             <option value="9">Букмейкеры и Ставки на спорт</option>

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OfferController;
 
 
-/*
+/**
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -25,7 +25,7 @@ Auth::routes([
     'reset' => true
 ]);
 
-/*
+/**
 |--------------------------------------------------------------------------
 | Основные информационные страницы
 |--------------------------------------------------------------------------
@@ -61,7 +61,7 @@ Route::get('/profile', function () {
 Route::put('{id}/change-password','App\Http\Controllers\SecureController@changePassword')->name('password');
 //Route::put('{id}/change-email','App\Http\Controllers\SecureController@changeEmail')->name('email');
 
-/*
+/**
 |--------------------------------------------------------------------------
 | Работа с балансом
 |--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ Route::get('/finance/pay', function () {
     return view('finance/pay');
 })->name('finance-pay')->middleware('auth');
 
-/*
+/**
 |----------------------------------------------------------------------------------
 | Офферы. Добавление, просмотр своих офферов, просмотр подробностей оффера и API
 |----------------------------------------------------------------------------------
@@ -99,7 +99,12 @@ Route::get('/offer/my/{id}', function (OfferController $offerController, $id) {
 })->middleware('auth');
 
 Route::get('/offer/my/{id}/edit', function (OfferController $offerController, $id) {
-    return view('offer/edit', ['data' => $offerController->getOfferData($id)]);
+    return view('offer/edit', [
+        'obj' => $offerController,
+        'data' => $offerController->getOfferData($id),
+        'moderate' => $offerController->checkModeration($id),
+        'details' => $offerController->getDetails($id)
+    ]);
 })->middleware('auth');
 
 Route::get('/offer/api', function () {
@@ -112,7 +117,7 @@ Route::get('/offer/pay/{id}', function ($id) {
 
 Route::get('/offer/{id}', [App\Http\Controllers\OfferController::class, 'showOffer'])->middleware('auth');
 
-/*
+/**
 |--------------------------------------------------------------------------
 | Каталог офферов
 |--------------------------------------------------------------------------
@@ -126,7 +131,7 @@ Route::get('/offers/catalog', function () {
     return view('offers.catalog', ['offers' => DB::table('offers')->get()]);
 })->name('offers-catalog')->middleware('auth');
 
-/*
+/**
 |--------------------------------------------------------------------------
 | Партнерская программа
 |--------------------------------------------------------------------------
@@ -144,8 +149,7 @@ Route::get('/partner/invite1', function () {
     return view('partner.invite1');
 })->name('partner-invite1')->middleware('auth');
 
-
-/*
+/**
 |--------------------------------------------------------------------------
 | Forms
 |--------------------------------------------------------------------------
@@ -154,3 +158,13 @@ Route::get('/partner/invite1', function () {
 Route::post('action/offer/create', [\App\Http\Controllers\OfferController::class, 'createOffer'])->name('create-offer');
 
 Route::post('action/offer/pay', [\App\Http\Controllers\OfferController::class, 'payOffer'])->middleware('auth');
+
+Route::post('/action/offer/edit/details/{id}', [\App\Http\Controllers\OfferController::class, 'editDetails'])->middleware('auth');
+
+/**
+|--------------------------------------------------------------------------
+| API Actions
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/api/offers/update/token/{id}', [\App\Http\Controllers\ApiOffersController::class, 'updateToken']);
