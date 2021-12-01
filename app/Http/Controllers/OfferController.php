@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\User;
+use Symfony\Component\Console\Helper\Table;
 
 class OfferController extends Controller
 {
@@ -26,7 +27,7 @@ class OfferController extends Controller
     public function showOffer($id)
     {
         $data = $this->getOfferData($id);
-        return view('offers.view', ['author' => $this->checkAuthor($data), 'data' => $data]);
+        return view('offers.view', ['author' => $this->checkAuthor($data), 'data' => $data, 'creatives' => $this->getCreatives($id)]);
     }
 
     /**
@@ -48,6 +49,11 @@ class OfferController extends Controller
     public function getOffers()
     {
         return DB::table('offers')->where('author', Auth::user()->id)->get();
+    }
+
+    public function getCreatives($id)
+    {
+        return DB::table('offers_creatives')->where('offer', $id)->get();
     }
 
     public function payOffer(Request $request)
@@ -191,5 +197,54 @@ class OfferController extends Controller
     public function checkDetails($id)
     {
         return boolval(DB::table('offer_details')->where('offer', $id)->first());
+    }
+
+    public function addCreo(Request $request)
+    {
+        if ($request->type == "land") {
+            $request->validate([
+                'title' => 'required|max:255',
+                'url' => 'required|max:1048',
+            ]);
+
+            DB::table('offers_creatives')->insert([
+                'offer' => $request->id,
+                'title' => $request->title,
+                'url' => $request->url,
+                'created_at' => now(),
+            ]);
+        } else {
+            $request->validate([
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'title' => 'required|max:255',
+            ]);
+
+            $imageName = time().'.'.$request->image->extension();
+            $request->image->move(public_path('uploads/creo/'), $imageName);
+
+            DB::table('offers_creatives')->insert([
+                'offer' => $request->id,
+                'title' => $request->title,
+                'img' => $imageName,
+                'created_at' => now(),
+            ]);
+        }
+
+        return redirect()->back()->with('success', 'Креатив успешно загружен!');
+    }
+
+    public function removeCreo($id)
+    {
+        $creo = DB::table('offers_creatives')->where('id', $id)->first();
+
+        // Если есть изображение, то сначала удаляем его
+        if ($creo->img != '') {
+            unlink('uploads/creo/'.$creo->img);
+        }
+
+        // Удаляем запись из таблицы
+        DB::table('offers_creatives')->where('id', $id)->delete();
+
+        return redirect()->back()->with('success', 'Креатив был успешно удалён.');
     }
 }

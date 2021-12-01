@@ -18,7 +18,7 @@
                                     <h5 class="mb-0">Мои офферы</h5>
                                 </div>
 
-                                <a href="{{ route('create-offer') }}" class="btn btn-primary">Добавить оффер</a>
+                                <a href="{{ route('offer-add') }}" class="btn btn-primary">Добавить оффер</a>
                             </div>
                         </div>
                     </div>
@@ -83,8 +83,14 @@
                                         </tbody>
                                     </table>
 
+                                    @if($offer->balance > 1 && $offer->checked == 0)
+                                        <p class="text-white p-1 bg-warning mb-0" style="padding-left: 7px !important;border-radius: 4px;">Оффер на модерации</p>
+                                    @endif
+
                                     @if($offer->balance < 1 && $offer->checked == 0)
-                                        <a href="/offer/pay/{{ $offer->id }}" class="text-danger">Необходимо пополнить баланс</p>
+                                        <a href="/offer/pay/{{ $offer->id }}">
+                                            <p class="text-white p-1 bg-danger mb-0" style="padding-left: 7px !important;border-radius: 4px;">Необходимо пополнить баланс</p>
+                                        </a>
                                     @endif
                                 </div>
                             </div>

@@ -25,6 +25,16 @@
             </div>
             <!--end breadcrumb-->
 
+            @if (\Session::has('success'))
+                <div class="row">
+                    <div class="col-12">
+                        <div class="alert alert-success">
+                            {!! \Session::get('success') !!}
+                        </div>
+                    </div>
+                </div>
+            @endif
+
             <div class="card">
                 <div class="row g-0">
                     <div class="col-md-4 border-end">
@@ -43,7 +53,7 @@
                                 <div class="text-danger"><i class="bx bxs-cart-alt align-middle"></i> Лимит продаж в день {{ $data->daily_sales }}</div>
                             </div>
                             <div class="mb-3">
-                                <span class="price h4">{{ $data->sale_percent }}</span>
+                                <span class="price h4">${{ $data->sale_percent }}</span>
                                 <span class="text-muted">/ {{ $data->action }}</span>
                             </div>
                             <p class="card-text fs-6">{{ $data->description }}</p>
@@ -60,9 +70,43 @@
 
                             @if(!$author)
                             <div class="d-flex gap-3 mt-3">
-                                <a href="#" class="btn btn-primary">Подключиться к офферу</a>
+                                @if (DB::table('connect_requests')->where('offer', $data->id)->where('user', Auth::user()->id)->first() === null)
+                                    <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#connectModal">Подключиться к офферу</a>
+                                @else
+                                    <button class="btn btn-warning" disabled>Запрос отправлен</button>
+                                @endif
                             </div>
                             @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="connectModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Получение рекламной ссылки</h5>
+{{--                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">--}}
+{{--                                <span aria-hidden="true">&times;</span>--}}
+{{--                            </button>--}}
+                        </div>
+                        <div class="modal-body">
+                            <form action="/action/offer/connect" method="post">
+                                @csrf
+                                <input type="text" name="id" value="{{ $data->id }}" hidden>
+                                <div class="form-group">
+                                    <label for="" class="mb-1">Создайте рабочее название - аббревиатуру ссылки.</label>
+                                    <input type="text" value="" name="urlName" class="form-control mb-3">
+                                </div>
+                                <div class="">
+                                    <div style="width: fit-content;margin-right: 0px;float: right;">
+                                        <button type="button" class="btn btn-light mr-3" data-dismiss="modal">Отменить</button>
+                                        <button type="submit" class="btn btn-primary ml-3">Подключиться</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -108,31 +152,116 @@
                     </li>
                 @endif
             </ul>
-            <div class="card">
-                <div class="card-body">
-                    <div class="row mt-3">
-                        <div class="tab-content pt-3">
+            <div class="mt-0">
+                <div class="">
+                    <div class="row">
+                        <div class="tab-content">
                             <div class="tab-pane fade show active" id="primaryhome" role="tabpanel">
-                                <p>{{ $data->description }}</p>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <table class="table table-responsive table-borderless table-hover">
+                                            <thead>
+                                            <tr>
+                                                <th style="width: 500px;"></th>
+                                                <th></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>
+                                                    <b>Тип проекта</b>
+                                                </td>
+                                                <td>
+                                                    <span>{{ $data->type }}</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <b>Тип действий</b>
+                                                </td>
+                                                <td>
+                                                    <span>{{ $data->action }}</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <b>Установленная ставка/вознограждение</b>
+                                                </td>
+                                                <td>
+                                                    <span>{{ $data->sale_percent }}</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <b>URL</b>
+                                                </td>
+                                                <td>
+                                                    <span>{{ $data->url }}</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <b>Мин. пополнение</b>
+                                                </td>
+                                                <td>
+                                                    <span>{{ $data->price_min }}</span>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                             <div class="tab-pane fade" id="primaryprofile" role="tabpanel">
-                                <p>{{ $data->action_description }}</p>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <p class="mb-0">{{ $data->action_description }}</p>
+                                    </div>
+                                </div>
                             </div>
                             <div class="tab-pane fade" id="primarycontact" role="tabpanel">
-                                <p>Промоматериалов пока нет.</p>
+                                <div class="card">
+                                    <div class="card-body">
+                                        @if (count($creatives) > 0)
+                                            <h5>Промоматериалы</h5>
+                                            <table class="table table-responsive table-hover">
+                                                <thead>
+                                                <tr>
+                                                    <th style="width: 5%;"></th>
+                                                    <th style="width: 90%;"></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                @foreach ($creatives as $creative)
+                                                    <tr valign="middle">
+                                                        <td>@if($creative->type == 'land') Лендинг @else Изображение @endif</td>
+                                                        <td><a target="_blank" href="@if($creative->type == 'land'){{ $creative->url }}@else/uploads/creo/{{ $creative->img }}@endif">{{ $creative->title }}</a></td>
+                                                    </tr>
+                                                @endforeach
+                                                </tbody>
+                                            </table>
+                                        @else
+                                            <p class="mt-0">Промоматериалов пока нет.</p>
+                                        @endif
+                                    </div>
+                                </div>
                             </div>
                             @if($author)
                                 <div class="tab-pane fade" id="balance" role="tabpanel">
-                                    <dl class="row">
-                                        <dt class="col-sm-3">Баланс оффера</dt>
-                                        <dd class="col-sm-9">0 <a href="/offer/pay/{{ $data->id }}" class="ml-2">Пополнить</a></dd>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <dl class="row mb-0">
+                                                <dt class="col-sm-3">Баланс оффера</dt>
+                                                <dd class="col-sm-9">0 <a href="/offer/pay/{{ $data->id }}" class="ml-2">Пополнить</a></dd>
 
-                                        <dt class="col-sm-3">В холде</dt>
-                                        <dd class="col-sm-9">0</dd>
+                                                <dt class="col-sm-3">В холде</dt>
+                                                <dd class="col-sm-9">0</dd>
 
-                                        <dt class="col-sm-3">Всего выплачено</dt>
-                                        <dd class="col-sm-9">0</dd>
-                                    </dl>
+                                                <dt class="col-sm-3">Всего выплачено</dt>
+                                                <dd class="col-sm-9">0</dd>
+                                            </dl>
+                                        </div>
+                                    </div>
                                 </div>
                             @endif
                         </div>

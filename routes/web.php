@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OfferController;
-
+use App\Http\Controllers\ApiOffersController;
+use App\Http\Controllers\UserController;
 
 /**
 |--------------------------------------------------------------------------
@@ -98,12 +99,14 @@ Route::get('/offer/my/{id}', function (OfferController $offerController, $id) {
     return view('offer/edit', ['offer' => $offerController->getOfferData($id)]);
 })->middleware('auth');
 
-Route::get('/offer/my/{id}/edit', function (OfferController $offerController, $id) {
+Route::get('/offer/my/{id}/edit', function (OfferController $offerController, $id, ApiOffersController $apiOffersController) {
     return view('offer/edit', [
         'obj' => $offerController,
         'data' => $offerController->getOfferData($id),
         'moderate' => $offerController->checkModeration($id),
-        'details' => $offerController->getDetails($id)
+        'details' => $offerController->getDetails($id),
+        'creatives' => $offerController->getCreatives($id),
+        'api' => $apiOffersController
     ]);
 })->middleware('auth');
 
@@ -123,12 +126,14 @@ Route::get('/offer/{id}', [App\Http\Controllers\OfferController::class, 'showOff
 |--------------------------------------------------------------------------
 */
 
-Route::get('/offers/links', function () {
-    return view('offers.links');
+Route::get('/offers/links', function (UserController $userController) {
+    return view('offers.links', [
+        'links' => $userController->getLinks()
+    ]);
 })->name('offers-links')->middleware('auth');
 
 Route::get('/offers/catalog', function () {
-    return view('offers.catalog', ['offers' => DB::table('offers')->get()]);
+    return view('offers.catalog', ['offers' => DB::table('offers')->where('checked', 1)->get()]);
 })->name('offers-catalog')->middleware('auth');
 
 /**
@@ -160,6 +165,12 @@ Route::post('action/offer/create', [\App\Http\Controllers\OfferController::class
 Route::post('action/offer/pay', [\App\Http\Controllers\OfferController::class, 'payOffer'])->middleware('auth');
 
 Route::post('/action/offer/edit/details/{id}', [\App\Http\Controllers\OfferController::class, 'editDetails'])->middleware('auth');
+
+Route::post('/action/offer/addCreo', [\App\Http\Controllers\OfferController::class, 'addCreo'])->middleware('auth');
+
+Route::get('/action/offer/removeCreo/{id}', [\App\Http\Controllers\OfferController::class, 'removeCreo'])->middleware('auth');
+
+Route::post('/action/offer/connect', [\App\Http\Controllers\AccessController::class, 'request'])->middleware('auth');
 
 /**
 |--------------------------------------------------------------------------

@@ -155,24 +155,6 @@
                                 </div>
                             </div>
                         </main>
-                        <footer class="footer">
-                            <div class="container-fluid">
-                                <div class="row text-muted">
-                                    <div class="col-8 text-left">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item">
-                                                <a class="text-muted" href="/#contact">Связь с нами</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-4 text-right">
-                                        <p class="mb-0">
-                                            © 2021 - <a href="/" class="text-muted">SystemAds</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </footer>
                     </div>
                 </div>
             </div>

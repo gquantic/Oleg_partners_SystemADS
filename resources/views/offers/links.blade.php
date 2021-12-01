@@ -19,13 +19,16 @@
                             <div class="card ">
                                 <div class="card-header">
                                     Список источников
-                                    <a href="/offer/all" class="btn btn-primary btn-sm float-right">Добавить ссылку</a>
+{{--                                    <a href="/offer/all" class="btn btn-primary btn-sm float-right">Добавить ссылку</a>--}}
                                 </div>
                                 <div class="card-body">
                                     <table class="table  table-striped table-bordered table-sm">
                                         <tbody><tr>
                                             <th>
                                                 Имя
+                                            </th>
+                                            <th>
+                                                Оффер
                                             </th>
                                             <th>
                                                 Детали
@@ -44,62 +47,25 @@
                                                 Заработано
                                             </th>
                                         </tr>
-                                        <tr>
-                                            <td>Первый</td>
-                                            <td>
-                                                <button class="btn btn-dark btn-sm showmaterials" data-offer_id="1">Материалы</button>
-                                                <button class="btn btn-dark btn-sm showdetails" data-offer_id="1">Основное</button>
-                                            </td>
-                                            <td>3</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0.00 $</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Второй</td>
-                                            <td>
-                                            <span class="badge badge-warning" style="color: #0d0f12">
-                                                Оффер выключен
-                                            </span>
-                                            </td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0.00 $</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Третий</td>
-                                            <td>
-                                                <button class="btn btn-dark btn-sm showmaterials" data-offer_id="3">Материалы</button>
-                                                <button class="btn btn-dark btn-sm showdetails" data-offer_id="3">Основное</button>
-                                            </td>
-                                            <td>6</td>
-                                            <td>3</td>
-                                            <td>2</td>
-                                            <td>3.00 $</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Четвертый</td>
-                                            <td>
-                                                <button class="btn btn-dark btn-sm showmaterials" data-offer_id="4">Материалы</button>
-                                                <button class="btn btn-dark btn-sm showdetails" data-offer_id="4">Основное</button>
-                                            </td>
-                                            <td>5</td>
-                                            <td>1</td>
-                                            <td>0</td>
-                                            <td>1.00 $</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Пятый</td>
-                                            <td>
-                                                <button class="btn btn-dark btn-sm showmaterials" data-offer_id="5">Материалы</button>
-                                                <button class="btn btn-dark btn-sm showdetails" data-offer_id="5">Основное</button>
-                                            </td>
-                                            <td>10</td>
-                                            <td>4</td>
-                                            <td>3</td>
-                                            <td>20.00 $</td>
-                                        </tr>
+                                        @foreach($links as $link)
+                                            <tr>
+                                                <td>{{ $link->link_name }}</td>
+                                                <td>
+                                                    @php
+                                                        $offer = DB::table('offers')->where('id', $link->offer)->first();
+                                                        echo "<a target='_blank' href='/offer/{$offer->id}'>$offer->title</a>";
+                                                    @endphp
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-light btn-sm showmaterials" data-offer_id="5">Материалы</button>
+                                                    <button class="btn btn-light btn-sm showdetails" data-offer_id="5">Основное</button>
+                                                </td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <td>00.00 $</td>
+                                            </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </div>
@@ -179,25 +145,6 @@
                         </div>
                     </div>
                 </main>
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <div class="row text-muted">
-                            <div class="col-8 text-left">
-                                <ul class="list-inline">
-
-                                    <li class="list-inline-item">
-                                        <a class="text-muted" href="/#contact">Связь с нами</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-4 text-right">
-                                <p class="mb-0">
-                                    © 2021 - <a href="/" class="text-muted">SystemAds</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
             </div>
         </div>
     </div>

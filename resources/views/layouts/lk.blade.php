@@ -7,18 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--favicon-->
     <link rel="icon" href="{{ asset('/images/favicon-32x32.png') }}" type="image/png"/>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
     <!--plugins-->
     <link href="{{ asset('/plugins/vectormap/jquery-jvectormap-2.0.2.css') }}" rel="stylesheet"/>
     <link href="{{ asset('/plugins/simplebar/css/simplebar.css') }}" rel="stylesheet"/>
     <link href="{{ asset('/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet"/>
     <link href="{{ asset('/plugins/metismenu/css/metisMenu.min.css') }}" rel="stylesheet"/>
+
     <!-- loader-->
     <link href="{{ asset('/css/pace.min.css') }}" rel="stylesheet"/>
     <script src="{{ asset('/js/pace.min.js') }}"></script>
+
     <!-- Bootstrap CSS -->
     <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/icons.css') }}" rel="stylesheet">
+
     <!-- Theme Style CSS -->
     <link rel="stylesheet" href="{{ asset('/css/dark-theme.css') }}"/>
     <link rel="stylesheet" href="{{ asset('/css/semi-dark.css') }}"/>
@@ -33,6 +40,31 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        // TOASTR
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-bottom-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "2000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+    </script>
 
     <title>@yield('page-title') | SystemADS</title>
 </head>
@@ -436,8 +468,8 @@
 <!--end switcher-->
 <!-- Bootstrap JS -->
 <script src="{{ asset('/js/bootstrap.bundle.min.js') }}"></script>
+
 <!--plugins-->
-<script src="{{ asset('/js/jquery.min.js') }}"></script>
 <script src="{{ asset('/plugins/simplebar/js/simplebar.min.js') }}"></script>
 <script src="{{ asset('/plugins/metismenu/js/metisMenu.min.js') }}"></script>
 <script src="{{ asset('/plugins/perfect-scrollbar/js/perfect-scrollbar.js') }}"></script>
@@ -457,6 +489,9 @@
 <script src="{{ asset('/js/index.js') }}"></script>
 <!--app JS-->
 <script src="{{ asset('/js/app.js') }}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
 
 @yield('post-upload')
 </body>

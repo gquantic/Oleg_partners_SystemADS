@@ -19,6 +19,17 @@ class ApiOffersController extends Controller
         return DB::table('api_offers')->where('offer', $id)->first();
     }
 
+    public function getToken($id)
+    {
+        $offerApi = DB::table('api_offers')->where('offer', $id)->first();
+
+        if ($offerApi === null) {
+            $this->updateToken($id);
+        }
+
+        return $offerApi->token;
+    }
+
     public function updateToken($id)
     {
         $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -29,7 +40,7 @@ class ApiOffersController extends Controller
             $token = $token.$str;
         }
 
-        $token = substr(str_shuffle($token), 0, 255);
+        $token = substr(str_shuffle($token), 0, $this->tokenLength);
 
         if (empty($this->getGrants($id))) {
             DB::table('api_offers')->insert([
@@ -48,6 +59,5 @@ class ApiOffersController extends Controller
         }
 
         return $token;
-//        return ;
     }
 }
