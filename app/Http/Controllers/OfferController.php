@@ -144,6 +144,7 @@ class OfferController extends Controller
                 'advantage_product' => $request->advantage_product,
                 'accept_traffic' => $request->accept_traffic,
                 'reject_traffic' => $request->reject_traffic,
+                'moderated' => 'wait',
                 'updated_at' => now(),
             ]);
         } else {
@@ -159,6 +160,7 @@ class OfferController extends Controller
                 'advantage_product' => $request->advantage_product,
                 'accept_traffic' => $request->accept_traffic,
                 'reject_traffic' => $request->reject_traffic,
+                'moderated' => 'wait',
                 'created_at' => now(),
             ]);
         }
@@ -175,6 +177,7 @@ class OfferController extends Controller
         } else {
             return $this->checkDetails($id);
         }
+//        return $this->checkDetails($id);
     }
 
     public function getDetails($id, $details = 'all')
@@ -246,5 +249,21 @@ class OfferController extends Controller
         DB::table('offers_creatives')->where('id', $id)->delete();
 
         return redirect()->back()->with('success', 'Креатив был успешно удалён.');
+    }
+
+    public function editActiveStatus($id)
+    {
+        $offer = $this->getOfferData($id);
+
+        if ($offer->author != Auth::user()->id)
+            return redirect()->back();
+
+        if ($offer->active == "active") {
+            DB::table('offers')->where('id', $id)->update(['active' => 'paused']);
+        } else {
+            DB::table('offers')->where('id', $id)->update(['active' => 'active']);
+        }
+
+        return redirect()->back()->with('success', 'Статус оффера успешно обновлён!');
     }
 }

@@ -92,7 +92,7 @@ Route::get('/offer/add', function () {
 })->name('offer-add')->middleware('auth');
 
 Route::get('/offer/my', function (OfferController $offerController) {
-    return view('offer/my-offers', ['offers' => $offerController->getOffers()]);
+    return view('offer/my-offers', ['offers' => $offerController->getOffers(), 'controller' => $offerController]);
 })->name('offer-my')->middleware('auth');
 
 Route::get('/offer/my/{id}', function (OfferController $offerController, $id) {
@@ -114,8 +114,8 @@ Route::get('/offer/api', function () {
     return view('offer.api');
 })->name('offer-api')->middleware('auth');
 
-Route::get('/offer/pay/{id}', function ($id) {
-    return view('offer.pay', ['id' => $id]);
+Route::get('/offer/pay/{id}', function ($id, OfferController $offerController) {
+    return view('offer.pay', ['id' => $id, 'details' => $offerController->getOfferData($id)]);
 })->middleware('auth');
 
 Route::get('/offer/{id}', [App\Http\Controllers\OfferController::class, 'showOffer'])->middleware('auth');
@@ -168,9 +168,11 @@ Route::post('/action/offer/edit/details/{id}', [\App\Http\Controllers\OfferContr
 
 Route::post('/action/offer/addCreo', [\App\Http\Controllers\OfferController::class, 'addCreo'])->middleware('auth');
 
+Route::post('/action/offer/connect', [\App\Http\Controllers\AccessController::class, 'request'])->middleware('auth');
+
 Route::get('/action/offer/removeCreo/{id}', [\App\Http\Controllers\OfferController::class, 'removeCreo'])->middleware('auth');
 
-Route::post('/action/offer/connect', [\App\Http\Controllers\AccessController::class, 'request'])->middleware('auth');
+Route::get('/action/offer/edit/active/{id}', [\App\Http\Controllers\OfferController::class, 'editActiveStatus'])->middleware('auth');
 
 /**
 |--------------------------------------------------------------------------

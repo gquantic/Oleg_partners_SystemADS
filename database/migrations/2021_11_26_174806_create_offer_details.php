@@ -16,6 +16,7 @@ class CreateOfferDetails extends Migration
         Schema::create('offer_details', function (Blueprint $table) {
             $table->id();
             $table->integer('offer');
+            $table->boolean('moderated')->default(0);
 
             $table->text('info_details')->nullable();
             $table->text('age_category')->nullable();

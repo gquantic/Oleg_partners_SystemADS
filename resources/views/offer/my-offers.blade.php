@@ -83,13 +83,29 @@
                                         </tbody>
                                     </table>
 
-                                    @if($offer->balance > 1 && $offer->checked == 0)
+                                    @if($controller->checkDetails($offer->id) != false && $controller->checkModeration($offer->id) == "approved")
+                                        <div class="row">
+                                            <div class="col-12 d-flex justify-content-end">
+                                                @if($offer->active == "paused")
+                                                    <a href="/action/offer/edit/active/{{ $offer->id }}">
+                                                        <button class="btn btn-success"><i class="bx bx-play"></i> Возобновить оффер</button>
+                                                    </a>
+                                                @else
+                                                    <a href="/action/offer/edit/active/{{ $offer->id }}">
+                                                        <button class="btn btn-warning"><i class="bx bx-pause"></i> Приостановить оффер</button>
+                                                    </a>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    @endif
+
+                                    @if($controller->checkDetails($offer->id) != false && $controller->checkModeration($offer->id) == "wait")
                                         <p class="text-white p-1 bg-warning mb-0" style="padding-left: 7px !important;border-radius: 4px;">Оффер на модерации</p>
                                     @endif
 
-                                    @if($offer->balance < 1 && $offer->checked == 0)
-                                        <a href="/offer/pay/{{ $offer->id }}">
-                                            <p class="text-white p-1 bg-danger mb-0" style="padding-left: 7px !important;border-radius: 4px;">Необходимо пополнить баланс</p>
+                                    @if($controller->checkDetails($offer->id) == false)
+                                        <a href="/offer/my/{{ $offer->id }}/edit">
+                                            <p class="text-white p-1 bg-danger mb-0" style="padding-left: 7px !important;border-radius: 4px;">Продолжите заполнение</p>
                                         </a>
                                     @endif
                                 </div>

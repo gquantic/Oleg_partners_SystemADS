@@ -28,6 +28,7 @@ class CreateOffersTable extends Migration
             $table->text('action_description');
             $table->text('currency');
             $table->integer('sale_percent');
+            $table->integer('min_balance')->nullable();
             $table->float('price_min');
             $table->float('price_max');
             $table->integer('daily_sales');

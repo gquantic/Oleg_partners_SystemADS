@@ -42,15 +42,15 @@
                 </div>
             @endif
 
-            @if($data->checked == 0 && $data->balance < 50)
+            @if($obj->checkDetails($data->id) == false)
                 <div class="row mb-2">
                     <div class="col-12">
                         <div class="alert alert-danger">
-                            Пожалуйста, пополните баланс для отправки на модерацию!
+                            Заполните данные для отправки на модерацию.
                         </div>
                     </div>
                 </div>
-            @elseif($data->checked == 0 && $data->balance > 49 && $moderate == "wait")
+            @elseif($data->checked == 0 && $moderate == "wait")
                 <div class="row mb-2">
                     <div class="col-12">
 
@@ -185,6 +185,14 @@
                                             </td>
                                             <td>
                                                 <span>{{ $data->price_min }}</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <b>Мин. баланс оффера</b>
+                                            </td>
+                                            <td>
+                                                <span>{{ $data->min_balance }}</span>
                                             </td>
                                         </tr>
                                         <tr>
