@@ -116,6 +116,15 @@
                         </div>
                     </a>
                 </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" data-bs-toggle="tab" href="#financials" role="tab" aria-selected="false">
+                        <div class="d-flex align-items-center">
+                            <div class="tab-icon"><i class="bx bx-dollar font-18 me-1"></i>
+                            </div>
+                            <div class="tab-title">Финансы оффера</div>
+                        </div>
+                    </a>
+                </li>
             </ul>
 
             <div class="card">
@@ -651,13 +660,43 @@
 
                                                             </tbody></table>
                                                     </div>
-
                                                 </div>
-
                                             </div>
-
-
-
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="financials" role="tabpanel">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <tbody>
+                                                            <tr valign="middle">
+                                                                <td style="width:25%;"><b>Баланс</b></td>
+                                                                <td class="">
+                                                                    {{ $data->balance }}
+                                                                </td>
+                                                                <td>
+                                                                    <button class="btn btn-light">
+                                                                        Пополнить баланс
+                                                                    </button>
+                                                                    <button class="btn btn-light">
+                                                                        Вывести средства
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><b>Минимальный баланс</b></td>
+                                                                <td>{{ $data->balance }}</td>
+                                                                <td></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

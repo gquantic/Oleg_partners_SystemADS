@@ -137,6 +137,8 @@
                     </li>
                     <li><a href="{{ route('offers-catalog') }}"><i class="bx bx-right-arrow-alt"></i>Каталог офферов</a>
                     </li>
+                    <li><a href="{{ route('offers-scum') }}"><i class="bx bx-right-arrow-alt"></i>Сомнительные офферы</a>
+                    </li>
                 </ul>
             </li>
 

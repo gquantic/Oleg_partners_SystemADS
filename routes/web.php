@@ -88,19 +88,19 @@ Route::get('/finance/pay', function () {
 */
 
 Route::get('/offer/add', function () {
-    return view('offer/add');
+    return view('offer.add');
 })->name('offer-add')->middleware('auth');
 
 Route::get('/offer/my', function (OfferController $offerController) {
-    return view('offer/my-offers', ['offers' => $offerController->getOffers(), 'controller' => $offerController]);
+    return view('offer.my-offers', ['offers' => $offerController->getOffers(), 'controller' => $offerController]);
 })->name('offer-my')->middleware('auth');
 
 Route::get('/offer/my/{id}', function (OfferController $offerController, $id) {
-    return view('offer/edit', ['offer' => $offerController->getOfferData($id)]);
+    return view('offer.edit', ['offer' => $offerController->getOfferData($id)]);
 })->middleware('auth');
 
 Route::get('/offer/my/{id}/edit', function (OfferController $offerController, $id, ApiOffersController $apiOffersController) {
-    return view('offer/edit', [
+    return view('offer.edit', [
         'obj' => $offerController,
         'data' => $offerController->getOfferData($id),
         'moderate' => $offerController->checkModeration($id),
@@ -135,6 +135,10 @@ Route::get('/offers/links', function (UserController $userController) {
 Route::get('/offers/catalog', function () {
     return view('offers.catalog', ['offers' => DB::table('offers')->where('checked', 1)->get()]);
 })->name('offers-catalog')->middleware('auth');
+
+Route::get('/offers/scum', function () {
+    return view('offers.scum');
+})->name('offers-scum');
 
 /**
 |--------------------------------------------------------------------------
